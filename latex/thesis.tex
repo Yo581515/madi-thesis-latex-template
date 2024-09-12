@@ -1,0 +1,211 @@
+%****************************************************************
+% File version control 
+%****************************************************************
+% Draft Version: 
+% change to \DraftMargintrue if you want to have more space for outside margin 
+% so that you supervisors can write comments there.
+
+\newif\ifDraftMargin     
+    \DraftMarginfalse     % default is false 
+
+% Final version:
+% the settings for final version below
+\documentclass[12pt]{book} % Default is book 12 pt regular A4 based on setting file
+% Default regular A4, based on setting file 
+\usepackage[paper = a4paper,         % A4 paper
+			twoside,                 %Two-side mode, switches margins on
+			bindingoffset = 2mm,     %Offset for binding side of page
+			hmargin = 25mm,          %Left and right margin
+            vmargin = 25mm,          %Top and bottom margin
+            pdftex]
+			{geometry}
+
+%****************************************************************
+% Note: Make all your adjustments in here in preamble and macros 
+%****************************************************************
+% Include all packages
+%
+\include{preamble}
+
+% Include user-defined macros
+%
+\include{macros}
+%
+
+% package used to generate dummy texts with the \blindtext
+\usepackage{blindtext}
+% If you need generate pdf based on a selected page range such as page 31-40:
+%\usepackage[31-40]{pagesel}
+
+% If you need to have very long chapter names,
+% set header height to 30pt to make room for two rows in the header
+%
+%\headheight 30pt
+
+%****************************************************************
+% \thecurrentfontsize can be used to check the used font size 
+%****************************************************************
+\makeatletter
+\newcommand\thecurrentfontsize{The current font size is: \f@size pt}
+\makeatother
+
+%****************************************************************
+% Hyphenation
+%****************************************************************
+% TeX is very proud of its hyphenation engine, to the point where it
+% hyphenates _everything_ just to show off.  Increasing penalty for
+% hyphenation, and increase tolerance for underfull boxes can make
+% the text easier to read, at the expense of making the text less aligned
+% to the right margin
+%
+\hyphenpenalty=10
+\tolerance=1000
+
+%*******************************************************
+% Set up the front page, with author, title, etc.
+%*******************************************************
+\title{
+    {\fontsize{20}{24}{\color{Maroon}\spaceduppercaps{Thesis Title Goes Here }}}
+    % Give smaller font size if the title is too long and goes to 2nd page.
+	\author{
+        \textbf{Doctoral Dissertation by}\\ 
+        \textbf{Author Name}\vspace{0.5cm}\\
+		Thesis submitted for\\ 
+        the degree of Philosophiae Doctor (PhD)\\
+        in\\ 
+        Computer Science:\\
+        {\fontsize{12}{14}Software Engineering, Sensor Networks and Engineering Computing}\vspace{0.5cm}\\
+		\includegraphics[scale=0.36]{logos/logo.pdf}\vspace{0.5cm}\\
+        Department of Computer Science,\\ 
+		Electrical Engineering and Mathematical Sciences\vspace{0.3cm}\\
+		Faculty of Engineering and Science \vspace{0.3cm}\\
+		Western Norway University of Applied Sciences
+	}
+	\date{Month day, year}
+}
+
+%====================================================
+%------------------ BEGIN DOCUMENT ------------------
+%====================================================
+\begin{document}
+
+%*******************************************************
+% Set the fontsize and baselineskip here, 
+% use 13/15 for default, final document downscaling to 80% 
+%*******************************************************
+\newcommand{\TextSize}{13}
+\newcommand{\BaseLineSkip}{15}
+\fontsize{\TextSize}{\BaseLineSkip}
+\selectfont
+
+%*******************************************************
+% Maketitle & copyright page
+%*******************************************************
+\cleardoublepage
+\maketitle
+\thispagestyle{empty}
+
+\normalsize\vspace*{12cm}
+\begin{minipage}{13cm}
+
+\copyright{\textbf{Author Name}}, \textbf{ \the\year{}}\vspace{2ex}  %insert your name and the correct year
+
+The material in this report is covered by copyright law.\vspace{3ex}\\
+
+Series of dissertation submitted to
+
+the Faculty of Engineering and Science,
+
+Western Norway University of Applied Sciences.\vspace{3ex}
+
+ISBN: XXXXXX\vspace{3ex} %number has to be decided by the library of the university
+
+
+Author: 
+
+Title: \vspace{4ex}
+
+Printed production: \\
+Aksell / Western Norway University of Applied Sciences \vspace{3ex}
+
+Bergen, Norway, \the\year{}
+\end{minipage}
+
+%*******************************************************
+% Draft version settings 
+%*******************************************************
+\ifDraftMargin
+    \newgeometry{bindingoffset=2mm, inner=18mm, outer=45mm, vmargin=25mm}
+\fi
+
+%*******************************************************
+% Dedication
+%*******************************************************
+\include{preface/dedication}
+
+%*******************************************************
+% Frontmatter
+%*******************************************************
+\frontmatter
+\pagestyle{empty}
+\include{preface/preface}
+\include{preface/acknowledgements}
+\include{preface/abstract}
+
+%*******************************************************
+% table of contents 
+%*******************************************************
+\cleardoublepage
+\tableofcontents
+\cleardoublepage
+%*******************************************************
+% Mainmatter
+%*******************************************************
+\mainmatter
+\pagestyle{main} % main style for chapters of thesis
+%
+% Main chapters
+%
+% Part One:
+\part{Overview}
+\label{part:1}
+
+\include{chapter-1/introduction}         % Introduction
+\include{chapter-2/otherchapers}
+\include{chapter-3/conclusion}
+%
+% The bibliography
+%
+\cleardoublepage
+\pagestyle{bibliography}
+\bibliographystyle{abbrv}
+\addcontentsline{toc}{chapter}{\numberline{}Bibliography}
+\bibliography{thesis,chapter-1/chapter-1}
+\cleardoublepage
+
+% Part Two:
+\part{Articles}
+\label{part:2}
+\include{papers}  % The papers, with cover pages
+
+%*******************************************************
+% Backmatter
+%*******************************************************
+% appendices if you need
+\cleardoublepage
+\pagestyle{appendix}
+\begin{appendices}
+    \include{appendix}
+\end{appendices}
+\addcontentsline{toc}{part}{\numberline{}Appendix}
+
+\backmatter
+\pagestyle{list}
+% list of figures if you need 
+%\listoffigures
+% list of tables if you need
+%\listoftables
+%*******************************************************
+% Game Over
+%*******************************************************
+\end{document}

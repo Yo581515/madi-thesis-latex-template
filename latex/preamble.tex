@@ -1,0 +1,369 @@
+%!TEX root = ./thesis.tex 
+%%%%%%%%%%%%%%%%%% % Font settings %%%%%%%%%%%%%%%%%%%%% 
+\usepackage[osf]{newpxtext} % Palatino font with old-style figures
+\linespread{1.05}
+\usepackage[T1,euler-digits]{eulervm} % Euler-VM fonts for maths 
+\usepackage[scaled]{beramono}   % typewriter font
+\usepackage[T1]{fontenc}	    % Activate Type 1 fonts 
+\usepackage[utf8]{inputenc}     % We want æøå 
+\usepackage{sectsty}            % Change section and chapter header 
+\usepackage{textcomp}
+\usepackage{anyfontsize}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{textcase}
+
+%%%%%%%%%%%%%%%%%% % General packages %%%%%%%%%%%%%%%%%% 
+\usepackage[english]{babel}    % language 
+\usepackage{xspace} 
+\usepackage{verbatim}          % at least use begin{comment} end{comment} 
+\usepackage{booktabs}          % Publication quality tables 
+\usepackage{graphicx} 
+\usepackage{bmpsize}           % Handles figures 
+\usepackage{subcaption} 
+\usepackage{wrapfig} 
+\usepackage[dvipsnames]{xcolor}     % Handles colors 
+\usepackage{setspace}               % Easy setting of line spacing Change the default alignment of a image from left or right an easy manner: 
+\usepackage[export]{adjustbox} 
+\usepackage[final]{pdfpages} 
+%\pdfminorversion=7                 % Raise the version of PDF to 1.7 if needed
+\usepackage{epstopdf}
+\usepackage{multirow,multicol}
+\usepackage{array}
+% caption for figures
+\usepackage{caption}
+\captionsetup[figure]{labelfont={bf},labelformat={default},labelsep=colon,name={Fig.}}
+\captionsetup[table]{labelfont={bf},labelformat={default},labelsep=colon,name={Table}}
+\captionsetup{compatibility=false}
+\usepackage{alltt}
+\usepackage{forloop}		        % For-loops!
+\usepackage[numbers,sort&compress]{natbib} % Sort numerical keys for multiple cites
+\usepackage{hypernat}               % Avoid breaking 'backref' option of hyperref package
+\usepackage{float}
+\usepackage{units}				    % semantically represent numbers with units
+\usepackage{url}
+\usepackage{titletoc}               % controlling design of Table of Contents too
+\usepackage{appendix}
+\usepackage[acronym,toc]{glossaries} % nice macros for handling all acronyms in the thesis
+\usepackage{etoolbox}
+\usepackage{emptypage}              % remove head and foot for empty pages
+\usepackage{quotchap}               % add your favorite quotation before chapter
+\usepackage[object=vectorian]{pgfornament} % package for ornaments
+\usepackage{import}                 % for subimport
+%%%%%%%%%%%
+% Tikz/PGF
+%%%%%%%%%%%
+\usepackage{tikz}
+\usetikzlibrary{positioning,shapes.geometric}
+\usetikzlibrary{arrows,automata,positioning}
+\usetikzlibrary{calc,decorations,decorations.pathmorphing}
+\usetikzlibrary{decorations.text}
+\usetikzlibrary{matrix}
+\usetikzlibrary{fit}
+\usetikzlibrary{patterns}
+\usetikzlibrary{topaths}
+
+\usepackage{pgf}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Theorems & Math & Algorithms
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsthm}
+\newtheorem{definition}{Definition}
+\usepackage{thmtools}
+
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{latexsym}
+
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage[inline]{enumitem}
+
+% Font size and spacing for algorithms
+\newcommand{\algfontsize}{\footnotesize}
+\newcommand{\algcommentfontsize}{\scriptsize}
+\newcommand{\algtypefontsize}{\scriptsize}
+\newcommand{\algospacing}{\vspace{\baselineskip}}
+
+% New definition: Switch/Case
+\algnewcommand\algorithmicswitch{\textbf{switch}}
+\algnewcommand\algorithmiccase{\textbf{case}}
+% New "environments"
+\algdef{SE}[SWITCH]{Switch}{EndSwitch}[1]{\algorithmicswitch\ #1\ \algorithmicdo}{\algorithmicend\ \algorithmicswitch}%
+\algdef{SE}[CASE]{Case}{EndCase}[1]{\algorithmiccase\ #1}{\algorithmicend\ \algorithmiccase}%
+\algtext*{EndSwitch}%
+\algtext*{EndCase}%
+
+\newcommand{\funclabel}[1]{%
+    \@bsphack
+    \protected@write\@auxout{}{%
+        \string\newlabel{#1}{{\jayden@currentfunction}{\thepage}}%
+    }%
+    \@esphack
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Nord colors, adapted from https://www.nordtheme.com/
+% See https://www.nordtheme.com/docs/colors-and-palettes for colors and style guides.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Polar Night
+\definecolor{nord0}{RGB}{46, 52, 64}
+\definecolor{nord1}{RGB}{59, 66, 82}
+\definecolor{nord2}{RGB}{67, 76, 94}
+\definecolor{nord3}{RGB}{76, 86, 106}
+% Snow Storm
+\definecolor{nord4}{RGB}{216, 222, 233}
+\definecolor{nord5}{RGB}{229, 233, 240}
+\definecolor{nord6}{RGB}{236, 239, 244}
+% Frost
+\definecolor{nord7}{RGB}{143, 188, 187}
+\definecolor{nord8}{RGB}{136, 192, 208}
+\definecolor{nord9}{RGB}{129, 161, 193}
+\definecolor{nord10}{RGB}{94, 129, 172}
+% Aurora
+\definecolor{nord11}{RGB}{191, 97, 106}
+\definecolor{nord12}{RGB}{208, 135, 112}
+\definecolor{nord13}{RGB}{235, 203, 139}
+\definecolor{nord14}{RGB}{163, 190, 140}
+\definecolor{nord15}{RGB}{180, 142, 173}
+
+%%%%%%%%%%%%
+% Listings
+%%%%%%%%%%%%
+\usepackage[procnames]{listings} % beautiful listings
+% some basic setups below as an example
+\lstdefinestyle{codestyle}{ %
+        basicstyle=\ttfamily\small,
+        keywordstyle={\bfseries\color{Maroon}},
+        stringstyle=\color{magenta},
+        morecomment=[l][\color{OliveGreen}]{//},
+        morecomment=[s][\color{OliveGreen}]{/*}{*/},
+        commentstyle=\color{OliveGreen},
+        backgroundcolor=\color{white},
+        breakatwhitespace=false,
+        breaklines=true,
+        captionpos=b,
+        keepspaces=true,
+        frame=single,
+        showspaces=false,
+        showstringspaces=false,
+        showtabs=false,
+        tabsize=2,
+        columns=fullflexible,
+}
+\lstset{style=codestyle}
+% if need more key words, then use the setup below as an example 
+% with the listing in the latex document together at the same place. 
+%\lstset{morekeywords={struct, chan, int, func, const, interface, type}}
+
+%%%%%%%%
+% Plots
+%%%%%%%%
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.5}
+
+%%%%%%%%%%%%%%%%%%%%%
+% comments and notes 
+%%%%%%%%%%%%%%%%%%%%%
+% For comments:
+% Use notes/todonotes for comments
+\usepackage{xargs}  % Use more than one optional parameter in a new commands
+\usepackage[colorinlistoftodos,prependcaption,textsize=small,textwidth=2cm]{todonotes}
+\setlength{\marginparwidth}{2cm}
+\newcommandx{\notes}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+
+% For text high light
+\newcommand{\texthighlight}[1]{\textcolor{OliveGreen}{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% font settings of table of contents (ToC) 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tocloft} % controlling the typographic design of the Table of Contents
+% ToC setting for parts 
+\makeatletter
+\let\oldl@part\l@part
+\renewcommand*\l@part[2]{\oldl@part{\MakeUppercase{#1}}{#2}}
+\makeatother
+\renewcommand{\cftpartfont}{\color{Maroon}\bfseries\normalsize}%
+\renewcommand{\cftpartpagefont}{\bfseries}%
+% ToC setting for chapters
+\renewcommand{\cftchappresnum}{\bfseries}%
+\renewcommand{\cftchappagefont}{\bfseries}%
+% ToC setting for sections
+\renewcommand{\cftsecpresnum}{\scshape}
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftsecpagefont}{\normalfont}
+% Toc setting for subsections
+\renewcommand{\cftsubsecpresnum}{\scshape}
+\renewcommand{\cftsubsecfont}{\normalfont}
+\renewcommand{\cftsubsecpagefont}{\normalfont}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Layout style setup of the chapter-, section-, subsection-, subsubsection- etc.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{titlesec}               % controlling title styles 
+% Part Style Setup
+\DeclareRobustCommand{\spaceduppercaps}[1]{\textls[80]{\scshape\MakeTextUppercase{#1}}}
+\titleformat{\part}[display]
+{\bfseries\centering\HUGE}%
+{\thispagestyle{empty}\partname~\MakeTextUppercase{\thepart}}{1em}%
+{\color{Maroon}\spaceduppercaps}[\bigskip\normalfont\normalsize]
+
+% Chapter Style Setup
+\newcommand*\HUGE{\Huge}
+\newcommand*\chapnamefont{\itshape\color{RoyalBlue}\HUGE\MakeUppercase}
+\DeclareFixedFont{\chapterNumber}{U}{eur}{b}{n}{70}
+\DeclareRobustCommand{\chapterspaceduppercaps}[1]{\textls[50]{\scshape\MakeTextUppercase{#1}}}
+\newcommand*\chaptitlefont{\baselineskip=1.5\baselineskip\fontsize{18}{21.6}\chapterspaceduppercaps}
+
+\newlength\beforechapskip
+\newlength\midchapskip
+\setlength\midchapskip{\paperwidth}
+\addtolength\midchapskip{-\textwidth}
+\addtolength\midchapskip{-\oddsidemargin}
+\addtolength\midchapskip{6in}
+\setlength\beforechapskip{18mm}
+\newcommand\boxsizept{38pt}
+
+\titleformat{\chapter}[display]
+{\normalfont\filleft\vspace{-1cm}}
+  {{\chapnamefont\chaptertitlename\enspace}%
+    \makebox[\boxsizept][l]{\color{RoyalBlue}\hspace{.001em}%
+      \resizebox{!}{\beforechapskip}{\chapterNumber\thechapter}%
+      \hspace{.001em}%
+      \rule{\midchapskip}{\beforechapskip}%
+    }%
+  }%
+  {60pt}
+  {\raggedright\chaptitlefont}
+  [\normalsize\vspace*{1.2\baselineskip}\titlerule]
+\titlespacing*{\chapter}
+  {0pt}{20pt}{20pt}
+
+% Section, Subsection, Subsubsection, Paragraph, Subparagraph Styles Setup:                   
+% the baselineskip should be 1.2 times the font size  
+\setcounter{secnumdepth}{3} % the depth for numbering to subsubsection 
+\titleformat*{\section}{\fontsize{15}{18}\selectfont\bfseries}
+\titleformat*{\subsection}{\fontsize{14}{16.8}\selectfont\itshape\bfseries}
+\titleformat*{\subsubsection}{\normalsize\selectfont\itshape\bfseries}
+\titleformat*{\paragraph}{\normalsize\scshape\bfseries}
+\titleformat*{\subparagraph}{\normalsize\scshape}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Hyperref Setup
+%%%%%%%%%%%%%%%%%%%%%%%%
+% The hyperref package allows advanced hyperlinking functionality
+%
+\definecolor{CTurl}{named}{Maroon}          % Maroon
+\definecolor{CTcitation}{named}{OliveGreen} % WebGreen
+\definecolor{CTlink}{named}{RoyalBlue}      % RoyalBlue {cmyk}{1, 0.50, 0, 0}
+
+\usepackage[backref,                        % List citing occurences in the References
+			colorlinks=true,                % Colored links
+            linktocpage=true,
+            pageanchor=true,
+            citecolor=CTcitation,           % Color of cite links
+            linkcolor=CTlink,               % Color of links
+            urlcolor=CTurl,                 % Color of urls
+            hypertexnames=false,
+			]{hyperref}
+\newcommand{\aref}[1]{\autoref{#1}} % Enable links
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Page header/footer Setup
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Set fancy page header/footer using fancyhdr package
+%
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+% color for texts of footer
+\definecolor{halfgray}{gray}{0.55}
+
+% header position setting
+\setlength{\headheight}{16pt}
+\setlength{\headsep}{24pt}
+% Ensure that the chapter and section headings are in lowercase
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+% page numbers in preamble
+\fancypagestyle{pre}{
+                \fancyfoot[C]{\thepage}
+}
+ 
+% Delete current header/footer
+\fancyhf{}
+
+% define main style for thesis chapters
+\fancypagestyle{main}{
+% Define header/footer layout
+    \fancyhead[lE]{\bfseries\itshape\leftmark}
+    \fancyhead[RO]{\bfseries\itshape\rightmark}
+    \renewcommand{\headrulewidth}{0pt}
+    \fancyfoot[LE]{\bfseries\thepage\qquad\textcolor{halfgray}{\chaptername}\enskip\textcolor{halfgray}{\thechapter}}
+    \fancyfoot[RO]{\bfseries\textcolor{halfgray}{\chaptername}\enskip\textcolor{halfgray}{\thechapter}\qquad\thepage}
+}
+
+% define style for plain page
+\fancypagestyle{plain}{
+	\fancyhead{}    % get rid of the headers on plain pages
+    \fancyfoot{}    % get rid of the footers on plain pages
+	\renewcommand{\headrulewidth}{0pt} % and no line
+}
+
+% define style for bibliography 
+\fancypagestyle{bibliography}{
+% Define header/footer layout
+    \fancyhead[lE]{\bfseries\itshape\leftmark}
+    \fancyhead[RO]{\bfseries\itshape\rightmark}
+    \renewcommand{\headrulewidth}{0pt}
+    \fancyfoot[LE]{\bfseries\thepage\qquad\textcolor{halfgray}{Bibliography}}
+    \fancyfoot[RO]{\bfseries\textcolor{halfgray}{Bibliography}\qquad\thepage}
+}
+
+% define style for pdf papers attached
+\fancypagestyle{pdfpapers}{
+    \fancyhead{} %get rid of the headers on plain pages
+    \renewcommand{\headrulewidth}{0pt} % and no line
+    \fancypagestyle{plain}{
+        \fancyfoot[LE]{\bfseries\thepage\qquad\textcolor{halfgray}{\chaptername}\enskip\textcolor{halfgray}{\thechapter}}
+        \fancyfoot[RO]{\bfseries\textcolor{halfgray}{\chaptername}\enskip\textcolor{halfgray}{\thechapter}\qquad\thepage}
+    }
+}
+
+% define style for compiled papers attached
+\fancypagestyle{compiledpapers}{
+    \fancyhead{} %get rid of the headers on plain pages
+    \renewcommand{\headrulewidth}{0pt} % and no line
+    \fancyfoot[LE]{\bfseries\thepage\qquad\textcolor{halfgray}{\chaptername}\enskip\textcolor{halfgray}{\thechapter}}
+    \fancyfoot[RO]{\bfseries\textcolor{halfgray}{\chaptername}\enskip\textcolor{halfgray}{\thechapter}\qquad\thepage}
+}
+
+% define style for lists in the end
+\fancypagestyle{list}{
+    \fancyhead{} %get rid of the headers on plain pages
+    \renewcommand{\headrulewidth}{0pt} % and the line
+    \fancyfoot[LE]{\bfseries\thepage\qquad\textcolor{halfgray}{List}}
+    \fancyfoot[RO]{\bfseries\textcolor{halfgray}{List}\qquad\thepage}
+}
+
+% define style for appendix in the end
+\fancypagestyle{appendix}{
+    \fancyhead{} %get rid of the headers on plain pages
+    \renewcommand{\headrulewidth}{0pt} % and the line
+    \fancyfoot[LE]{\bfseries\thepage\qquad\textcolor{halfgray}{Appendix}}
+    \fancyfoot[RO]{\bfseries\textcolor{halfgray}{Appendix}\qquad\thepage}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% reset counter for each part of the thesis
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{chngcntr}          % the package must be after package hyperref 
+\counterwithin*{chapter}{part} % reset counter for each part
+
