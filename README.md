@@ -17,3 +17,4 @@ If you do not want to use old-style figures, then you can change to [tgpagella](
 
 3. The Euler-VM fonts for maths (blend well with Palatino): [eulervm](http://ftp.riken.jp/tex-archive/fonts/eulervm/doc/latex/eulervm/eulervm.pdf) package. 
 
+LaTeX is available for several platforms (Windows, Mac OS, Linux). A good place to start is here: https://www.latex-project.org/get/

@@ -12,7 +12,13 @@
 % the settings for final version below
 \documentclass[11pt]{report} % 
 
-
+\usepackage[paper = a4paper,         % A4 paper
+%			twoside,                 %Two-side mode, switches margins on
+			bindingoffset = 2mm,     %Offset for binding side of page
+			hmargin = 25mm,          %Left and right margin
+            vmargin = 25mm,          %Top and bottom margin
+            pdftex]
+			{geometry}
 %****************************************************************
 % Note: Make all your adjustments in here in preamble and macros 
 %****************************************************************
@@ -113,8 +119,8 @@
 %
 % Main sections
 %
-
-\include{introduction.tex}         % Introduction
+ 
+\include{introduction}           
 \include{background}
 \include{design}
 \include{implementation}
