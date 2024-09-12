@@ -10,15 +10,8 @@
 
 % Final version:
 % the settings for final version below
-\documentclass[12pt]{book} % Default is book 12 pt regular A4 based on setting file
-% Default regular A4, based on setting file 
-\usepackage[paper = a4paper,         % A4 paper
-			twoside,                 %Two-side mode, switches margins on
-			bindingoffset = 2mm,     %Offset for binding side of page
-			hmargin = 25mm,          %Left and right margin
-            vmargin = 25mm,          %Top and bottom margin
-            pdftex]
-			{geometry}
+\documentclass[a4paper]{report} % Default is book 12 pt regular A4 based on setting file
+
 
 %****************************************************************
 % Note: Make all your adjustments in here in preamble and macros 
@@ -101,92 +94,46 @@
 %*******************************************************
 % Maketitle & copyright page
 %*******************************************************
-\cleardoublepage
+\clearpage
 \maketitle
-\thispagestyle{empty}
-
-\normalsize\vspace*{12cm}
-\begin{minipage}{13cm}
-
-\copyright{\textbf{Author Name}}, \textbf{ \the\year{}}\vspace{2ex}  %insert your name and the correct year
-
-The material in this report is covered by copyright law.\vspace{3ex}\\
-
-Series of dissertation submitted to
-
-the Faculty of Engineering and Science,
-
-Western Norway University of Applied Sciences.\vspace{3ex}
-
-ISBN: XXXXXX\vspace{3ex} %number has to be decided by the library of the university
-
-
-Author: 
-
-Title: \vspace{4ex}
-
-Printed production: \\
-Aksell / Western Norway University of Applied Sciences \vspace{3ex}
-
-Bergen, Norway, \the\year{}
-\end{minipage}
-
-%*******************************************************
-% Draft version settings 
-%*******************************************************
-\ifDraftMargin
-    \newgeometry{bindingoffset=2mm, inner=18mm, outer=45mm, vmargin=25mm}
-\fi
-
-%*******************************************************
-% Dedication
-%*******************************************************
-\include{preface/dedication}
 
 %*******************************************************
 % Frontmatter
 %*******************************************************
-\frontmatter
+%\frontmatter
 \pagestyle{empty}
-\include{preface/preface}
-\include{preface/acknowledgements}
 \include{preface/abstract}
+\include{preface/acknowledgements}
+
 
 %*******************************************************
 % table of contents 
 %*******************************************************
-\cleardoublepage
+\clearpage
 \tableofcontents
-\cleardoublepage
+\clearpage
+
 %*******************************************************
 % Mainmatter
 %*******************************************************
-\mainmatter
+
 \pagestyle{main} % main style for chapters of thesis
 %
-% Main chapters
+% Main sections
 %
-% Part One:
-\part{Overview}
-\label{part:1}
 
-\include{chapter-1/introduction}         % Introduction
-\include{chapter-2/otherchapers}
-\include{chapter-3/conclusion}
+\include{introduction.tex}         % Introduction
+\include{background}
+
 %
 % The bibliography
 %
-\cleardoublepage
+\clearpage
 \pagestyle{bibliography}
 \bibliographystyle{abbrv}
 \addcontentsline{toc}{chapter}{\numberline{}Bibliography}
-\bibliography{thesis,chapter-1/chapter-1}
-\cleardoublepage
-
-% Part Two:
-\part{Articles}
-\label{part:2}
-\include{papers}  % The papers, with cover pages
+\bibliography{thesis}
+\clearpage
 
 %*******************************************************
 % Backmatter
@@ -199,13 +146,10 @@ Bergen, Norway, \the\year{}
 \end{appendices}
 \addcontentsline{toc}{part}{\numberline{}Appendix}
 
-\backmatter
 \pagestyle{list}
 % list of figures if you need 
 %\listoffigures
 % list of tables if you need
 %\listoftables
-%*******************************************************
-% Game Over
-%*******************************************************
+
 \end{document}
