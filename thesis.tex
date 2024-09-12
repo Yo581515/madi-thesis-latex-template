@@ -10,7 +10,7 @@
 
 % Final version:
 % the settings for final version below
-\documentclass[a4paper]{report} % Default is book 12 pt regular A4 based on setting file
+\documentclass[11pt]{report} % 
 
 
 %****************************************************************
@@ -25,8 +25,6 @@
 \include{macros}
 %
 
-% package used to generate dummy texts with the \blindtext
-\usepackage{blindtext}
 % If you need generate pdf based on a selected page range such as page 31-40:
 %\usepackage[31-40]{pagesel}
 
@@ -58,23 +56,17 @@
 % Set up the front page, with author, title, etc.
 %*******************************************************
 \title{
-    {\fontsize{20}{24}{\color{Maroon}\spaceduppercaps{Thesis Title Goes Here }}}
+    {\fontsize{20}{24}{\color{Maroon}\spaceduppercaps{<Thesis Title Goes Here>}}}
     % Give smaller font size if the title is too long and goes to 2nd page.
 	\author{
-        \textbf{Doctoral Dissertation by}\\ 
-        \textbf{Author Name}\vspace{0.5cm}\\
-		Thesis submitted for\\ 
-        the degree of Philosophiae Doctor (PhD)\\
-        in\\ 
-        Computer Science:\\
-        {\fontsize{12}{14}Software Engineering, Sensor Networks and Engineering Computing}\vspace{0.5cm}\\
+        \textbf{<Author Name(s)>}\vspace{0.5cm}\\
+		Master's Thesis in Applied Computer Science and Engineering \vspace{0.5cm}\\
+        <Engineering> <Data Science> Specialisation \vspace{0.5cm}\\
 		\includegraphics[scale=0.36]{logos/logo.pdf}\vspace{0.5cm}\\
-        Department of Computer Science,\\ 
-		Electrical Engineering and Mathematical Sciences\vspace{0.3cm}\\
-		Faculty of Engineering and Science \vspace{0.3cm}\\
+		Faculty of Technology, Environmental and Social Sciences \vspace{0.3cm}\\
 		Western Norway University of Applied Sciences
 	}
-	\date{Month day, year}
+	\date{<Month> <day>, <year>}
 }
 
 %====================================================
@@ -124,6 +116,10 @@
 
 \include{introduction.tex}         % Introduction
 \include{background}
+\include{design}
+\include{implementation}
+\include{evaluation}
+\include{conclusion}
 
 %
 % The bibliography
@@ -148,8 +144,8 @@
 
 \pagestyle{list}
 % list of figures if you need 
-%\listoffigures
+\listoffigures
 % list of tables if you need
-%\listoftables
+\listoftables
 
 \end{document}
