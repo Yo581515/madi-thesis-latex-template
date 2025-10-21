@@ -1,11 +1,383 @@
-%!TEX root = thesis.tex
-\chapter{Background and Related Work}
-\label{chap:background}
-This is another chapter\ldots
+%!TEX root = thesis.tex % new 2.1 
+\chapter{Background and Related Work}\label{chap:background}
 
-% \begin{figure}
-%     \centering
-%     \includegraphics[scale=0.5]{figs/framework.png}
-%     \caption{Software technology evaluation framework.}
-%     \label{fig:framework}
-%   \end{figure}
+\section{General Database Concepts}\label{sec:general-database-concepts}
+
+This particular section covers the basic ideas of databases, building on the
+relational model by Codd\cite{Codd1970} and widely used database textbooks such
+as
+Silberschatz, Korth, and Sudarshan\cite{Silberschatz2020}. The understanding of
+relational as well as non relational database systems is based on these
+concepts.
+
+\subsection{Core Concepts} \textbf{Database (DB):} A database is an organized
+collection of data that is intended  to be used. Instead of a randomly
+generated group of files, a database offers structure as well as relationships
+that allows for effective management and retrieval of
+information\cite{Silberschatz2020}.
+
+\textbf{Database Management System (DBMS):} The DBMS is the software layer that
+manages databases. It ensures efficient storage, safe access, and concurrent
+use, allowing multiple users or applications to interact with the data without
+conflict\cite{Ramakrishnan2003}.
+
+\textbf{Schema / Data Model:} The schema describes how the data is structured,
+such as tables in relational databases or collections in document oriented
+databases. It acts like a blueprint that defines the format and relationships
+of stored data.
+
+\textbf{Record / Row / Document / Node / Key-Value Pair:} The record is the
+basic unit of data. Depending on the model, it may be a row in a table, a JSON
+document, a node in a graph, or a key-value entry.
+
+\textbf{Field / Attribute / Property:} These are the smallest data elements,
+such as a column in a table, a field inside a document, or a property of a
+graph node.
+
+\textbf{Index:} The DBMS maintains an index as an additional structure to
+facilitate more quickly searching. Much like a book index which helps locate
+pages quickly, a database index enables fast retrieval without requiring a full
+dataset scan. This increases performance but incurs additional storage and
+update costs\cite{Selinger1979}.
+
+\textbf{Query:} A query is an inquiry for information. For relational systems,
+Typically, this is expressed in SQL, but in non-relational systems it could be
+expressed using JSON syntax or API calls.
+
+\textbf{Transaction:} A transaction is a collection of operations that are
+regarded as a single unit of work. It ensures that either all operations are
+successful or even none
+are applied, which is essential for preserving correctness of applications such
+as financial systems\cite{Haerder1983}.
+
+\subsection{Relational Databases} \textbf{Table (Relation):} Data in relational
+databases is organized into tables (relations), which consist of rows and
+columns\cite{Codd1970}.
+
+\textbf{Row:} Each row represents a single record or instance of data.
+
+\textbf{Column (Attribute):} A named field that describes one aspect of the
+data in a table, such as “Name” or “Date of Birth.”
+
+\textbf{Keys:} Special fields that uniquely identify records or define
+relationships between them, such as primary and foreign keys.
+
+\textbf{Constraints:} Rules enforced by the DBMS to maintain data integrity,
+such as \texttt{NOT NULL} if data must be present, \texttt{UNIQUE} if values
+must be distinct, or \texttt{CHECK} for custom conditions.
+
+\textbf{SQL (Structured Query Language):} The standard language for defining
+and manipulating relational data.
+
+\textbf{Joins:} Operations that combine data from multiple tables based on
+relationships, enabling richer queries across datasets.
+
+\textbf{Normalization / Denormalization:} Techniques for organizing schema.
+Normalization reduces redundancy, while denormalization may intentionally
+duplicate data for performance gains.
+
+\subsection{NoSQL Databases}
+\textbf{Key–Value Stores:} Store data in keys and values in pairs. They are
+simple, fast, and scale very easily, usually used in real time systems and
+caching. Contemporary surveys describe how these systems are constructed to
+make use of higher throughput storage methods (such as flash media) and also
+deal with Big data volumes.\cite{Doekemeijer2022}.
+
+\textbf{Data:} NoSQL databases often store data in semi-structured documents
+(e.g., JSON). Documents can have flexible fields, and indexes enable efficient
+search. Common use cases include web applications and mobile
+applications\cite{Gessert2017}.
+
+\textbf{Column-Oriented Stores:} Organize data by columns instead of rows,
+which allows efficient storage and retrieval for large datasets. Inspired by
+Google’s Bigtable, they scale well for analytical
+workloads\cite{Chang2006Bigtable}.
+
+% \textbf{Graph Databases:} Represent data as nodes and edges, ideal for
+% applications with complex relationships such as social networks or logistics
+% networks. Specialized query languages such as Cypher or Gremlin are
+% used\cite{Gessert2017}.
+
+\subsection{Querying and Processing}
+
+Querying and processing are central to the functionality of any database
+management system (DBMS). They determine how efficiently data can be retrieved,
+aggregated, and analyzed to generate meaningful insights. Modern databases
+employ declarative query languages, such as SQL, which allow users to specify
+how to obtain it. The DBMS then interprets, optimizes, and executes these
+queries using various internal mechanisms\cite{Silberschatz2020}.
+
+\textbf{Aggregation:} Aggregation operations such as \texttt{SUM},
+\texttt{AVG}, and \texttt{COUNT} summarize groups of records into meaningful
+statistical values. These functions are fundamental to analytical workloads,
+providing insights into data distributions and trends. Aggregations are
+frequently combined with \texttt{GROUP BY} clauses or window functions for
+reporting, monitoring, and business intelligence purposes.
+
+\textbf{Query Optimizer:} A DBMS component that decides how a query should be
+executed most efficiently, using cost based or rule based
+strategies\cite{Selinger1979}.
+
+\subsection{Performance and Storage}
+
+Performance and storage mechanisms play a pivotal role in the design of modern
+database systems. Efficient query execution and data retrieval depend not only
+on algorithmic optimizations but also on how data is physically laid out,
+distributed, and accessed. Equally important is how storage is
+managed—techniques such as compression, partitioning, and caching directly
+impact throughput, latency, and resource usage\cite{Silberschatz2020}.
+
+\textbf{Indexes:} Structures maintained to make queries faster, such as B-trees
+or hash tables.
+
+\textbf{Sharding:} Distributing data across servers to scale horizontally.
+
+\textbf{Replication:} Storing copies of data across multiple machines for fault
+tolerance and availability.
+
+\textbf{Partitioning:} Dividing data within a table by rows (horizontal) or
+columns (vertical) for scalability and manageability.
+
+\textbf{Compression:} Techniques like dictionary or delta encoding to save
+space and speed up scans.
+
+\textbf{Caching:} Temporarily storing results in memory to improve performance
+of frequently repeated queries.
+
+% \subsection{Transaction Models}\label{subsec:transaction-models} 
+% \textbf{ACID:}
+% A set of guarantees (Atomicity, Consistency, Isolation, Durability) that ensure
+% reliable execution of transactions\cite{Haerder1983}.
+
+% \textbf{BASE:} A relaxed alternative emphasizing scalability: Basically
+% Available, Soft state, Eventually consistent\cite{Pritchett2008}.
+
+% \textbf{Isolation Levels:} Define how concurrent transactions interact, ranging
+% from minimal (Read Uncommitted) to strict (Serializable).
+
+% \textbf{Eventual Consistency:} A consistency model common in distributed
+% databases, where all replicas converge over time, as described by the CAP
+% theorem\cite{Kleppmann2015}.
+
+% 2.2 
+\section{Time Series Databases}\label{sec:time-series-databases}
+
+Time series databases (TSDBs) are specialized systems designed to efficiently
+store, manage, and analyze data that is inherently ordered by time. Unlike
+general purpose databases, which treat time as just another attribute, TSDBs
+are built around the temporal dimension, making them well suited for workloads
+such as sensor monitoring, financial transactions, or system
+metrics\cite{Bader2017}. The motivation for their existence stems from the
+unique properties of time series data: it is often high volume, append only,
+and queried in large sequential ranges.
+
+\subsection{Core Properties of Time Series Databases} A defining feature of
+TSDBs is their ability to handle extremely high write throughput, as new
+measurements are continuously generated at fine time intervals. This creates
+append only workloads, where new entries are written sequentially rather than
+updating past records\cite{Andersen2016}. Efficient indexing strategies
+optimized for time enable queries that filter or aggregate over specific
+ranges, such as hourly averages or daily maxima.
+
+Another core property is data lifecycle management. Since time series datasets
+grow rapidly, older measurements are often downsampled into coarser summaries
+(e.g., weekly or monthly averages) to save space while retaining long term
+trends\cite{Mostafa2022}. Similarly, compression techniques take advantage of
+the temporal correlation between consecutive values, significantly reducing
+storage costs without sacrificing query performance.
+
+% 2.3 % 2.3 
+\section{Time Series Databases Advantages and
+  Limitations}\label{sec:time-series-databases-advantages-and-limitations}
+
+Time series databases (TSDBs) specialize the storage and processing stack
+around the temporal dimension in order to handle append heavy workloads, long
+retention, and range queries over contiguous time intervals
+efficiently\cite{Jensen2017}. In contrast to general purpose DBMSs, TSDB
+engines align file formats, compression, and indexing with time centric access
+patterns and provide built in operators for windowing, downsampling, and
+interpolation, which together yield substantial improvements in write
+throughput, storage footprint, and time range query latency in real world
+sensor/IoT and monitoring scenarios\cite{Jensen2017,Jensen2022}.
+
+This section synthesizes the main advantages of TSDBs—\emph{compression},
+\emph{indexing}, and \emph{scalability}—and then discusses \emph{limitations}
+and a short \emph{survey based synthesis}. The discussion draws on recent
+surveys and representative system/algorithm studies spanning compression
+techniques\cite{Chiarot2023,Eichinger2015,Iqbal2021}, similarity/indexing
+methods\cite{Faloutsos1994,Keogh1999,Keogh2001}, and scalable TSDB
+architectures and deployments\cite{Wang2020,Goldschmidt2014,Duarte2019}.
+
+\subsection{Compression} Compression is a first class concern in TSDBs because
+it reduces both storage costs and I/O, directly impacting scan and aggregation
+performance. A recent survey classifies time series compression into (a)
+dictionary based, (b) functional approximation (e.g., wavelets, Fourier,
+polynomials), (c) autoencoder-based neural methods, and (d)
+sequential/bit-level schemes (e.g., delta, delta-of-delta, XOR, RLE),
+highlighting the trade offs between compression ratio, reconstruction error,
+and speed\cite{Chiarot2023}. Lossy polynomial segmentation with explicit error
+bounds can yield extreme reductions while preserving analytics utility.
+Eichinger\cite{Eichinger2015} reports piecewise regression with user chosen
+maximum deviation achieving up to several thousand fold reductions on smart
+grid data, without degrading forecasting beyond acceptable
+tolerances\cite{Eichinger2015}. Conversely, lossless schemes such as
+Gorilla style timestamp/value encodings (delta-of-delta for timestamps; XOR for
+floating point values) preserve exactness and excel on smoothly evolving or
+repetitive signals; comparative benchmarks show that lossy Chebyshev polynomial
+compression can dominate on highly variable, weakly correlated series, while
+Gorilla tends to win when consecutive values are similar, underscoring that no
+single method is universally best\cite{Iqbal2021}. Modern systems combine
+multiple codecs within a columnar/page format and choose adaptively per
+column/segment, integrating compression tightly with the storage engine and
+scan operators\cite{Jensen2022}.
+
+\subsection{Indexing} Beyond time partitioning, TSDBs benefit from
+representations and indexes that accelerate similarity and subsequence search.
+Classic results established a transform then index paradigm: reduce
+dimensionality (e.g., DFT, DWT, PAA), then index coefficient vectors in a
+multidimensional structure with lower bounding distances (no false
+dismissals)\cite{Faloutsos1994}. Subsequence matching over arbitrary lengths
+can be supported by sliding windows that form \emph{trails} in feature space;
+partitioning trails into minimum bounding rectangles enables efficient R*-tree
+search with large speedups over sequential scans\cite{Faloutsos1994}. For
+whole series search, locally adaptive piecewise constant approximation (APCA)
+permits variable length segments with tighter bounds than fixed size methods,
+and can itself be indexed; APCA delivered one to two orders of magnitude faster
+search than DFT/DWT/PAA on real datasets\cite{Keogh2001}. Shape oriented
+binning and pruning schemes further accelerate exact/approximate retrieval by
+grouping similar subsequences and exploiting best so far
+distances\cite{Keogh1999}. Collectively, these techniques exemplify a TSDB
+advantage: domain specific representations that are \emph{both} compressible
+and indexable, yielding fast time series similarity/range queries at scale.
+
+\subsection{Scalability} TSDB scalability spans high velocity ingestion,
+long term retention, and low latency analytics over large temporal windows.
+Cloud native and cluster capable TSDBs partition series by device/time and
+replicate data for availability; ingestion paths favor append only LSM/columnar
+layouts with background compaction. Apache IoTDB demonstrates an integrated
+approach with a native time series file format, time aware encodings, and both
+edge and cloud deployments, supporting high throughput writes and sub second
+aggregations on billions of points while integrating with big data frameworks
+for offline analytics\cite{Wang2020}. Empirical cloud benchmarks on industrial
+monitoring workloads show that TSDBs backed by horizontally scalable stores
+(e.g., Cassandra) can achieve near linear scaling in write throughput and
+remain resilient under node failures, whereas alternatives may plateau or
+require heavy tuning\cite{Goldschmidt2014}. At the application level, polyglot
+architectures that pair a TSDB for raw, compressed time series with an RDBMS
+for metadata/annotations improve end to end scalability and collaboration in
+large analysis platforms\cite{Duarte2019}. These results evidence another TSDB
+advantage: architectural fit for distributed, elastic environments with
+sustained ingestion and mixed historical/near real time analytics.
+
+\subsection{Limitations} Despite their strengths, TSDBs exhibit limitations
+that motivate ongoing research. Surveys note incomplete support for unified
+stream and batch processing and limited \emph{native} real time analytics,
+often necessitating external stream processors\cite{Jensen2017,Jensen2022}.
+Heterogeneous, irregular, or multivariate series can complicate schema design
+and compression choices; cross series joins and ad-hoc relational predicates
+may be less efficient than in mature RDBMSs\cite{Jensen2017}. Compression
+introduces trade offs between ratio, CPU cost, and (for lossy methods) bounded
+error that must match application tolerance\cite{Chiarot2023,Eichinger2015}.
+Finally, many scalable TSDBs relax full ACID guarantees and strong consistency
+to prioritize availability and throughput, which can constrain transactional
+workloads\cite{Jensen2017,Jensen2022}.
+
+\subsection{Synthesis of Survey and Review Literature} Comprehensive surveys
+consistently justify the specialization of TSDBs: general purpose DBMSs
+struggle with high rate ingestion and long range time scans at scale, whereas
+TSDBs align storage, indexing, and operators with temporal access
+patterns\cite{Jensen2017,Jensen2022}. They catalog architectural families
+(standalone engines, DBMS extensions, external store designs) and features
+(approximate queries, interpolation/forecasting operators, compression,
+retention), and identify open problems around elastic distributed designs,
+unified streaming/historical processing, and standardized
+interfaces\cite{Jensen2022}. Earlier reviews from a data mining perspective
+emphasize foundational issues of representation, indexing, similarity search,
+and visualization that continue to underpin modern TSDB capabilities and
+trade offs\cite{Garima2014}. Overall, the literature positions TSDBs as the
+preferred substrate for time centric workloads, with clear advantages in
+compression, indexing, and scalability, tempered by limitations in
+heterogeneity handling, complex relational querying, and integrated real time
+analytics\cite{Jensen2017,Jensen2022,Chiarot2023}.
+
+% 2.4 
+\section{Database Technologies for Time Series
+  Data}\label{sec:database-technologies-time-series}
+
+while working with this thesis, according to the DB Engines
+ranking\cite{dbengines2025}, the most popular time series databases include
+InfluxDB, Kdb+, Prometheus, Graphite, TimescaleDB, Apache Druid, QuestDB,
+GridDB, DolphinDB, and TDengine. These systems differ in architecture,
+scalability, and cloud offerings, but all are optimized for managing temporal
+workloads.
+
+\subsection{InfluxDB} InfluxDB is an open source TSDB optimized for high ingest
+and analytics. It supports retention policies, continuous queries, and both
+SQL like (InfluxQL) and functional (Flux) query languages. Cloud deployment is
+offered via InfluxDB Cloud\cite{influxdbDocs}.
+
+\subsection{Kdb+} Kdb+ is a columnar, in memory TSDB written in the q language.
+It is widely used in finance for ultra low latency analytics on tick data. It
+supports real time and historical tiers and scales through Kdb Insights on
+Kubernetes\cite{kdbDocs}.
+
+\subsection{Prometheus} Prometheus is a Cloud Native Computing Foundation
+(CNCF) project focused on monitoring and alerting. It stores multi dimensional
+time series identified by labels, queried using PromQL. It is pull based
+(scraping) and integrates tightly with Kubernetes and
+Grafana\cite{prometheusDocs}.
+
+\subsection{Graphite} Graphite is an older TSDB that stores metrics in Whisper
+files. It provides simple retention based downsampling and integrates with
+StatsD and Grafana. It is suitable for smaller scale infrastructure
+monitoring\cite{graphiteDocs}.
+
+\subsection{TimescaleDB} TimescaleDB is a PostgreSQL extension with hypertables
+for automatic time partitioning. It supports continuous aggregates, native
+compression, and standard SQL. A fully managed cloud version is
+available\cite{timescaleDocs}.
+
+\subsection{Apache Druid} Apache Druid is a distributed columnar database
+optimized for real time OLAP queries on event streams. It partitions data by
+time and dimensions, enabling sub second analytics at scale\cite{druidDocs}.
+
+\subsection{QuestDB} QuestDB is a high performance open source TSDB with native
+SQL. It supports Influx line protocol ingestion and PostgreSQL wire
+compatibility, allowing millions of rows per second
+ingestion\cite{questdbDocs}.
+
+\subsection{GridDB} GridDB, developed by Toshiba, is an open source TSDB
+optimized for IoT and big data. It uses a key container model with native
+time series containers and supports clustering for horizontal scalability and
+high availability. Both SQL like and NoSQL APIs are provided, making it
+adaptable to different application needs\cite{griddbDocs}.
+
+\subsection{DolphinDB} DolphinDB is a distributed analytics platform with a
+built in TSDB engine. It combines stream and batch processing, supports hybrid
+row–column storage, and uses advanced compression (e.g., LZ4, Delta-of-delta).
+It is ACID-compliant, offers sub-millisecond queries, and integrates with tools
+like Python, R, and Grafana, making it suitable for finance and
+IoT\cite{dolphindbDocs}.
+
+\subsection{TDengine} TDengine is an open source distributed TSDB optimized for
+IoT and the Industrial Internet of Things (IIoT). It provides super tables, SQL
+support, and cloud deployment with built in stream
+processing\cite{tdengineDocs}.
+
+% 2.5 
+\section{Benchmarking and Evaluation
+  Approaches}\label{sec:benchmarking-and-evaluation-approaches}
+
+Benchmarking and evaluating time series databases (TSDBs) is crucial for
+understanding their performance characteristics, scalability, and suitability
+for specific workloads. This section reviews common methodologies, metrics, and
+tools used in TSDB benchmarking, drawing on recent literature and industry
+practices.
+
+\newpage
+
+\subsection{General Database Benchmarking}
+\newpage
+
+\section{Related Work}
+\newpage

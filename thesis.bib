@@ -2,6 +2,7 @@
 @STRING{LNCS = "Lecture Notes in Computer Science"}
 @STRING{IEEE = "IEEE"}
 
+% Introduction
 
 @misc{SmartOceanSite,
   author       = {{SFI Smart Ocean}},
@@ -82,8 +83,6 @@
 }
 
 
-
-
 @misc{ACM-CCS-2012,
   title        = {{ACM} Computing Classification System},
   howpublished = {ACM Digital Library website},
@@ -94,9 +93,419 @@
 }
 
 
-@misc{Jensen2017,
-  author       = {Jensen, Søren Kejser and Pedersen, Torben Bach and Thomsen, Christian},
-  title        = {Time Series Management Systems: A Survey},
-  howpublished = {arXiv preprint arXiv:1710.01077},
-  note         = {Available at: \url{https://arxiv.org/abs/1710.01077} (accessed: 28.08.2025)}
+
+% Background and Related Work
+% % 2.1 new
+% free access
+@book{Silberschatz2020,
+  author    = {Abraham Silberschatz and Henry Korth and S. Sudarshan},
+  title     = {Database System Concepts},
+  edition   = {7th},
+  publisher = {McGraw-Hill},
+  year      = {2020},
+  note      = {Available at: \url{https://www.db-book.com/} (accessed: 04.09.2025)}
+}
+
+% free access
+@article{Codd1970,
+  author  = {Codd, Edgar F.},
+  title   = {A Relational Model of Data for Large Shared Data Banks},
+  journal = {Communications of the ACM},
+  volume  = {13},
+  number  = {6},
+  pages   = {377--387},
+  year    = {1970},
+  doi     = {10.1145/362384.362685},
+  note    = {Available at: \url{https://dl.acm.org/doi/10.1145/362384.362685} (accessed: 30.08.2025)}
+}
+
+
+@book{Ramakrishnan2003,
+  author    = {Raghu Ramakrishnan and Johannes Gehrke},
+  title     = {Database Management Systems},
+  edition   = {3rd},
+  publisher = {McGraw-Hill},
+  year      = {2003},
+  note      = {Available at: \url{https://pages.cs.wisc.edu/~dbbook/openAccess/thirdEdition/} (accessed: 04.09.2025)}
+}
+
+@inproceedings{Selinger1979,
+  author    = {Patricia G. Selinger and Morton M. Astrahan and Donald D. Chamberlin and Raymond A. Lorie and Thomas G. Price},
+  title     = {Access Path Selection in a Relational Database Management System},
+  booktitle = {Proceedings of the 1979 ACM SIGMOD International Conference on Management of Data},
+  pages     = {23--34},
+  publisher = {ACM},
+  year      = {1979},
+  doi       = {10.1145/582095.582099},
+  note      = {Available at: \url{https://dl.acm.org/doi/10.1145/582095.582099} (accessed: 04.09.2025)}
+}
+
+@article{Haerder1983,
+  author    = {Theo H{\"{a}}rder and Andreas Reuter},
+  title     = {Principles of Transaction­oriented Database Recovery},
+  journal   = {ACM Computing Surveys},
+  volume    = {15},
+  number    = {4},
+  pages     = {287--317},
+  year      = {1983},
+  doi       = {10.1145/289.291},
+  note      = {Available at: \url{https://dl.acm.org/doi/10.1145/289.291} (accessed: 04.09.2025)}
+}
+
+@article{Gessert2017,
+  author    = {Felix Gessert and Wolfram Wingerath and Steffen Friedrich and Norbert Ritter},
+  title     = {NoSQL Database Systems: A Survey and Decision Guidance},
+  journal   = {Computer Science -- Research and Development},
+  volume    = {32},
+  number    = {3--4},
+  pages     = {353--365},
+  year      = {2017},
+  doi       = {10.1007/s00450-016-0334-3},
+  note      = {Available at: \url{https://link.springer.com/article/10.1007/s00450-016-0334-3} (accessed: 04.09.2025)}
+}
+
+@inproceedings{Chang2006Bigtable,
+  author    = {Fay Chang and Jeffrey Dean and Sanjay Ghemawat and Wilson C. Hsieh and Deborah A. Wallach and Mike Burrows and Tushar Chandra and Andrew Fikes and Robert E. Gruber},
+  title     = {Bigtable: A Distributed Storage System for Structured Data},
+  booktitle = {Proceedings of the 7th USENIX Symposium on Operating Systems Design and Implementation (OSDI 2006)},
+  pages     = {205--218},
+  year      = {2006},
+  publisher = {USENIX Association},
+  note      = {Open access on USENIX: \url{https://www.usenix.org/conference/osdi-06/bigtable-distributed-storage-system-structured-data} (accessed: 04.09.2025)}
+}
+
+
+@article{Pritchett2008,
+  author    = {Dan Pritchett},
+  title     = {BASE: An Acid Alternative},
+  journal   = {ACM Queue},
+  volume    = {6},
+  number    = {3},
+  pages     = {48--55},
+  year      = {2008},
+  doi       = {10.1145/1394127.1394128},
+  note      = {Available at: \url{https://dl.acm.org/doi/10.1145/1394127.1394128} (accessed: 04.09.2025)}
+}
+
+@article{Kleppmann2015,
+  author    = {Martin Kleppmann},
+  title     = {A Critique of the CAP Theorem},
+  journal   = {ArXiv preprint arXiv:1509.05393},
+  year      = {2015},
+  note      = {Available at: \url{https://arxiv.org/abs/1509.05393} (accessed: 04.09.2025)}
+}
+
+@article{Doekemeijer2022,
+  author    = {Krijn Doekemeijer and Animesh Trivedi},
+  title     = {Key-Value Stores on Flash Storage Devices: A Survey},
+  journal   = {ArXiv preprint arXiv:2205.07975},
+  year      = {2022},
+  note      = {Available at: \url{https://arxiv.org/abs/2205.07975} (accessed: 04.09.2025)}
+}
+
+
+% 2.2
+% free access
+@inproceedings{Bader2017,
+  author    = {Bader, Andreas and Kopp, Oliver and Falkenthal, Michael},
+  title     = {Survey and Comparison of Open Source Time Series Databases},
+  booktitle = {BTW 2017 -- Workshopband},
+  series    = {Lecture Notes in Informatics (LNI)},
+  volume    = {P-266},
+  pages     = {249--268},
+  publisher = {Gesellschaft f{\"u}r Informatik (GI)},
+  year      = {2017},
+  url       = {https://dl.gi.de/items/1d3c3186-8d50-4b51-b097-7695027076fd},
+  note      = {Available at: \url{https://dl.gi.de/items/1d3c3186-8d50-4b51-b097-7695027076fd} (accessed: 05.09.2025)}
+}
+
+@inproceedings{Andersen2016,
+  author    = {Andersen, Michael P. and Culler, David E.},
+  title     = {{BTrDB}: Optimizing Storage System Design for Timeseries Processing},
+  booktitle = {FAST '16: 14th USENIX Conference on File and Storage Technologies},
+  pages     = {39--52},
+  publisher = {USENIX Association},
+  year      = {2016},
+  url       = {https://www.usenix.org/conference/fast16/technical-sessions/presentation/andersen},
+  note      = {Available at: \url{https://www.usenix.org/conference/fast16/technical-sessions/presentation/andersen} (accessed: 05.09.2025)}
+}
+
+@article{Mostafa2022,
+  author       = {Mostafa, Jalal and Wehbi, Sara and Chilingaryan, Suren and Kopmann, Andreas},
+  title        = {{SciTS}: A Benchmark for Time-Series Databases in Scientific Experiments and Industrial Internet of Things},
+  journal      = {arXiv},
+  year         = {2022},
+  eprint       = {2204.09795},
+  archivePrefix= {arXiv},
+  primaryClass = {cs.DB},
+  url          = {https://arxiv.org/abs/2204.09795},
+  note         = {Available at: \url{https://arxiv.org/abs/2204.09795} (accessed: 05.09.2025)}
+}
+
+@article{Shah2022,
+  author       = {Shah, Bonil and Jat, P. M. and Sashidhar, Kalyan},
+  title        = {Performance Study of Time Series Databases},
+  journal      = {arXiv},
+  year         = {2022},
+  eprint       = {2208.13982},
+  archivePrefix= {arXiv},
+  primaryClass = {cs.DB},
+  url          = {https://arxiv.org/abs/2208.13982},
+  note         = {Available at: \url{https://arxiv.org/abs/2208.13982} (accessed: 05.09.2025)}
+}
+
+% 2.3
+@ARTICLE{Jensen2017,
+  author={Jensen, Søren Kejser and Pedersen, Torben Bach and Thomsen, Christian},
+  journal={IEEE Transactions on Knowledge and Data Engineering}, 
+  title={Time Series Management Systems: A Survey}, 
+  year={2017},
+  volume={29},
+  number={11},
+  pages={2581-2600},
+  keywords={Time series analysis;Distributed databases;Query processing;Database languages;Data models;Computational modeling;Approximation;cyber-physical systems;data abstraction;data compaction and compression;data storage representations;data structures;database architectures;distributed databases;distributed systems;internet of things;scientific databases;sensor data;sensor networks;stream processing;time series analysis},
+  doi={10.1109/TKDE.2017.2740932}}
+
+
+@inbook{Jensen2022,
+title = "Time Series Management Systems: A 2022 Survey",
+abstract = "Enormous amounts of time series are being collected in many different domains. These include, but are not limited to, aviation, computing, energy, finance, logistics, and medicine. However, general-purpose Database Management Systems (DBMSs) are not optimized for times series management and thus significantly limit the amount of time series that can be efficiently stored and analyzed. As a remedy, specialized Time Series Management Systems (TSMSs) have been developed. This chapter, provides a thorough survey and classification of TSMSs that are developed through academic or industrial research and documented through peer-reviewed papers. To document their design and novel contributions, a summary of each system is provided. The systems are primarily classified based on their architecture. In addition, the systems are classified based on: when and why each system was developed, how it can be deployed, how mature its implementation is, how scalable it is, how it processes time series, what interfaces it provides, the type of approximation it supports, how low latency it can achieve, how it stores time series, and the types of queries it supports. The chapter concludes with a collection of open research problems based on the limitations of the surveyed systems.",
+author = "Jensen, \{S{\o}ren Kejser\} and Pedersen, \{Torben Bach\} and Christian Thomsen",
+year = "2022",
+month = dec,
+day = "4",
+language = "English",
+editor = "Themis Palpanas and Kostas Zoumpatianos",
+booktitle = "Data Series Management and Analytics",
+publisher = "Association for Computing Machinery (ACM)",
+address = "United States",
+}
+
+@INPROCEEDINGS{Garima2014,
+  author={Garima and Rani, Sangeeta},
+  booktitle={2014 5th International Conference - Confluence The Next Generation Information Technology Summit (Confluence)}, 
+  title={Review on time series databases and recent research trends in Time Series Mining}, 
+  year={2014},
+  volume={},
+  number={},
+  pages={109-115},
+  keywords={Time series analysis;Data mining;Data visualization;Approximation methods;Market research;Spatial databases;computer aided design;historical climate network;summary of day;accounting-fraud detection},
+  doi={10.1109/CONFLUENCE.2014.6949290}}
+
+@article{Chiarot2023,
+author = {Chiarot, Giacomo and Silvestri, Claudio},
+title = {Time Series Compression Survey},
+year = {2023},
+issue_date = {October 2023},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {55},
+number = {10},
+issn = {0360-0300},
+url = {https://doi.org/10.1145/3560814},
+doi = {10.1145/3560814},
+abstract = {Smart objects are increasingly widespread and their ecosystem, also known as the Internet of Things (IoT), is relevant in many application scenarios. The huge amount of temporally annotated data produced by these smart devices demands efficient techniques for the transfer and storage of time series data. Compression techniques play an important role toward this goal and, even though standard compression methods could be used with some benefit, there exist several ones that specifically address the case of time series by exploiting their peculiarities to achieve more effective compression and more accurate decompression in the case of lossy compression techniques. This article provides a state-of-the-art survey of the principal time series compression techniques, proposing a taxonomy to classify them considering their overall approach and their characteristics. Furthermore, we analyze the performances of the selected algorithms by discussing and comparing the experimental results that were provided in the original articles.The goal of this article is to provide a comprehensive and homogeneous reconstruction of the state-of-the-art, which is currently fragmented across many articles that use different notations and where the proposed methods are not organized according to a classification.},
+journal = {ACM Comput. Surv.},
+month = feb,
+articleno = {198},
+numpages = {32},
+keywords = {streams, compression, Time series}
+}
+
+
+@INPROCEEDINGS{Iqbal2021,
+  author={Iqbal, Owais and Keskar, R. B.},
+  booktitle={2021 10th International Conference on Power Science and Engineering (ICPSE)}, 
+  title={Techniques to Compress Time-Series Data}, 
+  year={2021},
+  volume={},
+  number={},
+  pages={56-60},
+  keywords={Costs;Correlation;Time series analysis;Data compression;Chebyshev approximation;Benchmark testing;Rendering (computer graphics);Chebyshev compression;quantization;lossy compression;Gorilla compression;delta-of-delta;xor},
+  doi={10.1109/ICPSE53473.2021.9656860}}
+
+
+@inproceedings{Keogh2001,
+author = {Keogh, Eamonn and Chakrabarti, Kaushik and Pazzani, Michael and Mehrotra, Sharad},
+title = {Locally adaptive dimensionality reduction for indexing large time series databases},
+year = {2001},
+isbn = {1581133324},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/375663.375680},
+doi = {10.1145/375663.375680},
+abstract = {Similarity search in large time series databases has attracted much research interest recently. It is a difficult problem because of the typically high dimensionality of the data.. The most promising solutions involve performing dimensionality reduction on the data, then indexing the reduced data with a multidimensional index structure. Many dimensionality reduction techniques have been proposed, including Singular Value Decomposition (SVD), the Discrete Fourier transform (DFT), and the Discrete Wavelet Transform (DWT). In this work we introduce a new dimensionality reduction technique which we call Adaptive Piecewise Constant Approximation (APCA). While previous techniques (e.g., SVD, DFT and DWT) choose a common representation for all the items in the database that minimizes the global reconstruction error, APCA approximates each time series by a set of constant value segments of varying lengths such that their individual reconstruction errors are minimal. We show how APCA can be indexed using a multidimensional index structure. We propose two distance measures in the indexed space that exploit the high fidelity of APCA for fast searching: a lower bounding Euclidean distance approximation, and a non-lower bounding, but very tight Euclidean distance approximation and show how they can support fast exact searching, and even faster approximate searching on the same index structure. We theoretically and empirically compare APCA to all the other techniques and demonstrate its superiority.},
+booktitle = {Proceedings of the 2001 ACM SIGMOD International Conference on Management of Data},
+pages = {151–162},
+numpages = {12},
+keywords = {indexing, dimensionality reduction, content-based retrieval},
+location = {Santa Barbara, California, USA},
+series = {SIGMOD '01}
+}
+
+
+@INPROCEEDINGS{Keogh1999,
+  author={Keogh, E.J. and Pazzani, M.J.},
+  booktitle={Proceedings. Eleventh International Conference on Scientific and Statistical Database Management}, 
+  title={An indexing scheme for fast similarity search in large time series databases}, 
+  year={1999},
+  volume={},
+  number={},
+  pages={56-67},
+  keywords={Indexing;Databases;Medical diagnostic imaging;Extraterrestrial measurements;Time measurement;Shape;Computer science;Electronic switching systems;Read only memory;Telemetry},
+  doi={10.1109/SSDM.1999.787621}}
+
+@inproceedings{Faloutsos1994,
+author = {Faloutsos, Christos and Ranganathan, M. and Manolopoulos, Yannis},
+title = {Fast subsequence matching in time-series databases},
+year = {1994},
+isbn = {0897916395},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/191839.191925},
+doi = {10.1145/191839.191925},
+abstract = {We present an efficient indexing method to locate 1-dimensional subsequences within a collection of sequences, such that the subsequences match a given (query) pattern within a specified tolerance. The idea is to map each data sequences into a small set of multidimensional rectangles in feature space. Then, these rectangles can be readily indexed using traditional spatial access methods, like the R*-tree [9]. In more detail, we use a sliding window over the data sequence and extract its features; the result is a trail in feature space. We propose an efficient and effective algorithm to divide such trails into sub-trails, which  are subsequently represented by their Minimum Bounding Rectangles (MBRs). We also examine queries of varying lengths, and we show how to handle each case efficiently. We implemented our method and carried out experiments on synthetic and real data (stock price movements). We compared the method to sequential scanning, which is the only obvious competitor. The results were excellent: our method accelerated the search time from 3 times up to 100 times.},
+booktitle = {Proceedings of the 1994 ACM SIGMOD International Conference on Management of Data},
+pages = {419–429},
+numpages = {11},
+location = {Minneapolis, Minnesota, USA},
+series = {SIGMOD '94}
+}
+
+
+@article{Wang2020,
+author = {Wang, Chen and Huang, Xiangdong and Qiao, Jialin and Jiang, Tian and Rui, Lei and Zhang, Jinrui and Kang, Rong and Feinauer, Julian and McGrail, Kevin A. and Wang, Peng and Luo, Diaohan and Yuan, Jun and Wang, Jianmin and Sun, Jiaguang},
+title = {Apache IoTDB: time-series database for internet of things},
+year = {2020},
+issue_date = {August 2020},
+publisher = {VLDB Endowment},
+volume = {13},
+number = {12},
+issn = {2150-8097},
+url = {https://doi.org/10.14778/3415478.3415504},
+doi = {10.14778/3415478.3415504},
+abstract = {The amount of time-series data that is generated has exploded due to the growing popularity of Internet of Things (IoT) devices and applications. These applications require efficient management of the time-series data on both the edge and cloud side that support high throughput ingestion, low latency query and advanced time series analysis. In this demonstration, we present Apache IoTDB managing time-series data to enable new classes of IoT applications. IoTDB has both edge and cloud versions, provides an optimized columnar file format for efficient time-series data storage, and time-series database with high ingestion rate, low latency queries and data analysis support. It is specially optimized for time-series oriented operations like aggregations query, down-sampling and sub-sequence similarity search. An edge-to-cloud time-series data management application is chosen to demonstrate how IoTDB handles time-series data in real-time and supports advanced analytics by integrating with Hadoop and Spark. An end-to-end IoT data management solution is shown by integrating IoTDB with PLC4x, Calcite, and Grafana.},
+journal = {Proc. VLDB Endow.},
+month = aug,
+pages = {2901–2904},
+numpages = {4}
+}
+
+
+@INPROCEEDINGS{Goldschmidt2014,
+  author={Goldschmidt, Thomas and Jansen, Anton and Koziolek, Heiko and Doppelhamer, Jens and Breivold, Hongyu Pei},
+  booktitle={2014 IEEE 7th International Conference on Cloud Computing}, 
+  title={Scalability and Robustness of Time-Series Databases for Cloud-Native Monitoring of Industrial Processes}, 
+  year={2014},
+  volume={},
+  number={},
+  pages={602-609},
+  keywords={Phasor measurement units;Databases;Time series analysis;Scalability;Monitoring;Benchmark testing;Clouds;linear scalability;support for industrial workloads;workload independence;resiliency and read/write independence},
+  doi={10.1109/CLOUD.2014.86}}
+
+
+@inproceedings{Duarte2019,
+  author    = {Eduardo Duarte and Diogo Gomes and David Campos and Rui L. Aguiar},
+  title     = {Distributed and Scalable Platform for Collaborative Analysis of Massive Time Series Data Sets},
+  booktitle = {Proceedings of the 8th International Conference on Data Science, Technology and Applications (DATA)},
+  year      = {2019},
+  pages     = {141--152},
+  publisher = {SCITEPRESS - Science and Technology Publications},
+  address   = {Praia de Rocha, Portugal},
+  doi       = {10.5220/0007834701410152},
+  isbn      = {978-989-758-377-3},
+  url       = {https://www.scitepress.org/Papers/2019/78347/78347.pdf}
+}
+
+
+@article{Eichinger2015,
+  author    = {Eichinger, Frank and Karnstedt, Marcel and Fuchs, Andreas and Plantikow, Stefan and Böhm, Klemens},
+  title     = {A Time-Series Compression Technique and Its Application to the Smart Grid},
+  journal   = {The VLDB Journal},
+  year      = {2015},
+  volume    = {24},
+  number    = {2},
+  pages     = {193--218},
+  publisher = {Springer},
+  doi       = {10.1007/s00778-014-0368-8},
+  url       = {https://link.springer.com/article/10.1007/s00778-014-0368-8}
+}
+
+% 2.4
+
+@misc{dbengines2025,
+  author  = {{DB-Engines}},
+  title   = {DB-Engines Ranking of Time-Series DBMS},
+  year    = {2025},
+  note    = {Available at: \url{https://db-engines.com/en/ranking/time+series+dbms} (accessed: 16.09.2025)}
+}
+
+@misc{influxdbDocs,
+  author  = {{InfluxData}},
+  title   = {InfluxDB Documentation},
+  year    = {2025},
+  note    = {Available at: \url{https://docs.influxdata.com/} (accessed: 16.09.2025)}
+}
+
+@misc{kdbDocs,
+  author  = {{Kx Systems}},
+  title   = {Kdb+ Documentation},
+  year    = {2025},
+  note    = {Available at: \url{https://code.kx.com/q/} (accessed: 16.09.2025)}
+}
+
+@misc{prometheusDocs,
+  author  = {{Prometheus Authors}},
+  title   = {Prometheus Documentation},
+  year    = {2025},
+  note    = {Available at: \url{https://prometheus.io/docs/introduction/overview/} (accessed: 16.09.2025)}
+}
+
+@misc{graphiteDocs,
+  author  = {{Graphite Project}},
+  title   = {Graphite Documentation},
+  year    = {2025},
+  note    = {Available at: \url{https://graphite.readthedocs.io/} (accessed: 16.09.2025)}
+}
+
+@misc{timescaleDocs,
+  author  = {{Timescale}},
+  title   = {TimescaleDB Documentation},
+  year    = {2025},
+  note    = {Available at: \url{https://docs.timescale.com/} (accessed: 16.09.2025)}
+}
+
+@misc{druidDocs,
+  author  = {{Apache Software Foundation}},
+  title   = {Apache Druid Documentation},
+  year    = {2025},
+  note    = {Available at: \url{https://druid.apache.org/docs/} (accessed: 16.09.2025)}
+}
+
+@misc{questdbDocs,
+  author  = {{QuestDB Team}},
+  title   = {QuestDB Documentation},
+  year    = {2025},
+  note    = {Available at: \url{https://questdb.io/docs/} (accessed: 16.09.2025)}
+}
+
+@misc{griddbDocs,
+  author  = {{Toshiba}},
+  title   = {GridDB Documentation},
+  year    = {2025},
+  note    = {Available at: \url{https://docs.griddb.net/} (accessed: 16.09.2025)}
+} # updated link
+
+@misc{dolphindbDocs,
+  author  = {{DolphinDB Inc.}},
+  title   = {DolphinDB Documentation},
+  year    = {2025},
+  note    = {Available at: \url{https://docs.dolphindb.com/en/about_dolphindb.html} (accessed: 16.09.2025)}
+} # updated link
+
+@misc{tdengineDocs,
+  author  = {{TDengine Authors}},
+  title   = {TDengine Documentation},
+  year    = {2025},
+  note    = {Available at: \url{https://docs.tdengine.com/} (accessed: 16.09.2025)}
 }
