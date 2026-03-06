@@ -24,7 +24,9 @@
 %****************************************************************
 % Include all packages
 %
-\include{preamble}
+% \include{preamble}
+\input{preamble} % updated
+
 
 % Include user-defined macros
 %
@@ -143,7 +145,9 @@
 %
 \clearpage
 \pagestyle{bibliography}
-\bibliographystyle{abbrv}
+%\bibliographystyle{abbrv} %old
+% \bibliographystyle{abbrvurl} % new
+\bibliographystyle{plainnat}
 \addcontentsline{toc}{chapter}{\numberline{}Bibliography}
 \bibliography{thesis}
 \clearpage
