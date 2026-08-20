@@ -33,13 +33,74 @@ The final phase of the \citet{Brown_1996} framework, experiment evaluation, invo
 
 
 \section{Selection of Database Systems}
+
+\begin{landscape}
+\small
+\begin{longtable}{|p{2.6cm}|p{6.5cm}|p{3cm}|p{4.5cm}|}
+\hline
+\textbf{Database} & \textbf{Highlights} & \textbf{License} & \textbf{Best For} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Database} & \textbf{Highlights} & \textbf{License} & \textbf{Best For} \\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+\hline
+\endlastfoot
+
+InfluxDB & SQL and InfluxQL; no temporal joins; no matviews, last-write; object store native (Core); Explorer app & MIT/Apache, commercial tiers & Recent-data metrics \& IoT \\
+\hline
+
+TimescaleDB & PostgreSQL SQL (no TS); no temporal joins; matviews with dedup on write; tiering via Tiger Cloud only; cloud console & Apache 2.0 plus TSL & Time-series in PostgreSQL \\
+\hline
+
+MongoDB & Document-oriented (BSON); native time series collections since v5.0; automatic bucketing and columnar compression; writable non-materialized views backed by an internal collection & Server Side Public License (SSPL) & Flexible-schema applications with time-series data (IoT, logs, event data) \\
+\hline
+
+QuestDB & SQL and time semantics; full temporal joins; matviews with dedup on write; tiered Parquet (Enterprise); console and dashboards & Apache 2.0 plus Enterprise & Capital markets, energy, aerospace \& robotics \\
+\hline
+
+TDengine & SQL; ASOF plus window joins; matviews (TSMA) with dedup; tiering via Enterprise; taosExplorer & AGPL-3.0 plus Enterprise & Industrial IoT \& edge \\
+\hline
+
+ClickHouse & SQL dialect; ASOF join only; matviews with eventual dedup; S3 tiering (OSS); /play console & Apache 2.0 plus Cloud & Large-scale analytical scans \\
+\hline
+
+kdb+ & q and SQL (KDB-X) and Python; ASOF plus window joins; no matviews, DIY dedup; proprietary storage; KX Dashboards, pgwire & Proprietary, free tiers & HFT \& capital markets \\
+\hline
+
+DolphinDB & SQL plus scripting language; ASOF plus window (functions); no matviews, ingest dedup; proprietary storage; GUI and web dashboards & Proprietary, free Community & Capital markets, industrial IoT \\
+\hline
+
+Prometheus & Kubernetes-native monitoring; PromQL query language; single-node (Thanos/Mimir for horizontal scaling) & Apache 2.0 & Kubernetes-native monitoring \\
+\hline
+
+VictoriaMetrics & Prometheus long-term storage; MetricsQL (PromQL-compatible); horizontal scaling with free clustering & Apache 2.0 & Prometheus long-term storage \\
+\hline
+
+Apache Druid & SQL (via Calcite); horizontal scaling; real-time stream analytics & Apache 2.0 & Real-time stream analytics \\
+\hline
+
+Graphite & Custom query language; limited scalability & Apache 2.0 & Legacy monitoring \\
+\hline
+
+\caption{Comparison of time series databases: highlights, licensing, and best-fit use cases. Compiled from \citet{questdb2026best}, \citet{tigerdata2026best}, and \citet{mongodb2026timeseries}.}
+\label{tab:tsdb-comparison}
+\end{longtable}
+\end{landscape}
+
 For this study, the selection of database technologies is guided by the need to evaluate systems which represent distinct architectural approaches to time series data management while still staying practically deployable within the experimental environment scope. Instead of attempting to evaluate all possible time series databases, this study stays focused by selecting a few representative systems that allow for meaningful comparisons across different philosophies of design. Three systems are picked for the initial phase of the evaluation – MongoDB, TimescaleDB and InfluxDB. These systems were picked because together, they represent different paradigms for managing time series data – native time series database architectures, document-oriented storage and relational time-series extensions. This diversity ensures the study can examine how fundamentally different design decisions can influence system behavior under identical workload conditions. 
 
-TimescaleDB is picked to represent relational database systems extended for time series workloads. It is built on top of PostgresSQL so it retains its relational model and SQL interface while adding time-based partitioning and optimizations for performance that are tailored to temporal data. It is included to allow the study to find out how far a relational system can adapt to handle time-stamped data without abandoning established principles. 
+TimescaleDB \cite{timescale_timescaledb_github} is picked to represent relational database systems extended for time series workloads. It is built on top of PostgresSQL so it retains its relational model and SQL interface while adding time-based partitioning and optimizations for performance that are tailored to temporal data. It is included to allow the study to find out how far a relational system can adapt to handle time-stamped data without abandoning established principles. 
 
-InfluxDB is added to the list as a purpose-built time series database intended to specifically serve high throughput ingestion and improve efficiency of time-based querying. It has a storage engine, built-in retention mechanism and query model which are optimized for temporal workloads. Investigating InfluxDB provides insight into the limitations and performance advantages of specialized systems which prioritize time series operations over general-purpose use. 
+InfluxDB \cite{influxdata_influxdb} is added to the list as a purpose-built time series database intended to specifically serve high throughput ingestion and improve efficiency of time-based querying. It has a storage engine, built-in retention mechanism and query model which are optimized for temporal workloads. Investigating InfluxDB provides insight into the limitations and performance advantages of specialized systems which prioritize time series operations over general-purpose use. 
 
-MongoDB represents document-oriented NoSQL approaches to time series data management. It has a flexible schema design and very recently introduced time series collections to allow it to accommodate heterogenous sensor data with diverse structures. It has been included in the study to provide insight into how a schema-flexible, general-purpose system performs when applied to structured time series workloads.
+MongoDB \cite{mongodb_github} represents document-oriented NoSQL approaches to time series data management. It has a flexible schema design and very recently introduced time series collections to allow it to accommodate heterogenous sensor data with diverse structures. It has been included in the study to provide insight into how a schema-flexible, general-purpose system performs when applied to structured time series workloads.
 
 
 The selection of the above systems was also influenced by the practical considerations related to integration and implementation. All three databases offer mature Python libraries including pymongo for MongoDB, psycopg2 for TimescaleDB and influxdb-client for InfluxDB. These libraries make it possible to keep the interaction patterns consistent across systems within the experimental framework. Because there are stable client libraries, performance measurements can be conducted programmatically and reproducibly.
@@ -82,8 +143,8 @@ Query workload is executed after there is sufficient volumes of ingested data to
 
 
 
-\subsection{\textcolor{red}{Query Execution Approaches}}
-\textcolor{red}{This study uses two complementary approaches to provide a comprehensive evaluation of query performance – native query execution and driver-based execution.}
+% \subsection{\textcolor{red}{Query Execution Approaches}}
+% \textcolor{red}{This study uses two complementary approaches to provide a comprehensive evaluation of query performance – native query execution and driver-based execution.}
 
 
 \subsection{Workload Consistency and Control}
@@ -100,7 +161,7 @@ The environment of the experiment refers to the set of conditions under which al
 All experiments are run inside a controlled hardware environment to get rid of variability from differences in computational resources. The evaluation is done on a single-node system set with sufficient memory, power and storage capacity to support the defined workloads. This is a deliberate design choice intended to isolate the intrinsic performance characteristics of each database system. Distributed deployments may be common in large-scale production environments but introducing multiple nodes would add a layer of complexity related to synchronization, network communication and cluster management. The focus on a single node configuration makes it possible for the study to ensure that performance differences reflect the efficiency of each system’s storage engine, query processing mechanism and indexing strategy. Hardware specifications including memory capacity, CPU type, storage type and number of cores are documented to make the evaluation reproducible. Where possible, storage devices that have consistent performance characteristics get used to minimize variability in disk I/O behavior. 
 
 \subsection{Software Environment}
-Each system is deployed with stable and widely adopted versions to make sure the evaluation is reliable and consistent. The software environment includes the Operating System, database engines and the client libraries used for interaction. InfluxDB, MongoDB and TimescaleDB are installed and configured accordingly. The default configurations become the baseline with minimal adjustments made only according to need to make sure there is the time series functionality or ensure compatibility. That way, the experiment reflects realistic deployment scenarios where systems often get used with standard configurations instead of tuned setups. The experimental framework is run in Python which works like the orchestration layer for query execution, ingestion \textcolor{red}{ and data generation}. Python is chosen because it has an extensive ecosystem of database drivers and it is suitable for automation and scripting. A single programming language across all systems makes sure that there is operational consistency. 
+Each system is deployed with stable and widely adopted versions to make sure the evaluation is reliable and consistent. The software environment includes the Operating System, database engines and the client libraries used for interaction. InfluxDB, MongoDB and TimescaleDB are installed and configured accordingly. The default configurations become the baseline with minimal adjustments made only according to need to make sure there is the time series functionality or ensure compatibility. That way, the experiment reflects realistic deployment scenarios where systems often get used with standard configurations instead of tuned setups. The experimental framework is run in Python which works like the orchestration layer for query execution, ingestion. Python is chosen because it has an extensive ecosystem of database drivers and it is suitable for automation and scripting. A single programming language across all systems makes sure that there is operational consistency. 
 
 
 \subsection{Database Configuration}
@@ -142,6 +203,21 @@ Scalability is a measure used to determine the changes in system performance as 
 Resource utilization offers an insight into the efficiency of a database system with regards to its ability to effectively utilize resources. The metrics include CPU usage, memory, and disk I/O. Resource utilization is tracked for both ingestion and query execution. High resource usage can imply poor design or configuration of a system, while low resource usage with high performance can imply effective optimization. Resource utilization is not a key aspect of the study but offers useful information for understanding performance results. For instance, two systems can have similar performance but drastically different resource requirements. 
 
 
+\subsection{Composite Interpretation of Metrics}
+The evaluation does not depend on any one metric alone to determine system performance. Rather, the results are interpreted across the identified metrics to notice any trade-offs between different system behavior aspects. A database that does well in terms of ingestion throughput could have a higher query latency or a lower storage efficiency. These trade-offs have to be considered based on the intended application. 
+
+The relationship between the evaluated performance metrics is not independent, as improvements in one dimension may introduce trade-offs in another, consistent with multi-metric evaluation approaches in time series database benchmarking \citep{khelifati2023tsmbench}. This interaction is illustrated in Figure \ref
+{fig:matarcies-correlation}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/matracies_coaralation.png}
+    \caption{Conceptual relationship between performance metrics in time series database evaluation}
+    \label{fig:matarcies-correlation}
+\end{figure}
+
+
+
 
 
 \section{Data Analysis Methods}
@@ -173,6 +249,19 @@ It is possible that performance measurements occasionally have outliers resultin
 \subsection{Experimental Procedure}
 The experimental procedure outlines the steps taken to carry out the evaluation process. The study’s formalization of this process guarantees that all database systems are subject to the same environment, hence a consistent performance measurement process. The process begins with the initialization of the experimental environment. The database systems are set up, initialized, and verified to ensure correct functioning before the experiment. The database systems are reset to a clean state before running the experiment, where necessary, to avoid any effects from previous runs of the experiment.
 
+
+The sequence of operations involved in the experimental procedure is illustrated in Figure \ref{fig:experimental-workflow}. The workflow captures the progression from dataset preparation through ingestion, query execution, and performance measurement. It is adapted from the Time Series Benchmark Suite (TSBS) repository (Timescale, n.d.-b).
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/experimental_workflow.png}
+    \caption{Experimental workflow illustrating the sequence from data preparation to performance analysis}
+    \label{fig:experimental-workflow}
+\end{figure}
+
+
+
+
 After initialization, the data set is fed into the database system through a predefined workload. The insertion of data into the database occurs in batches, with the process’s timing being recorded. The process begins with a small warm-up phase to allow the database system to settle before the performance measurement process begins. The initialization process of the database systems is avoided during the experiment to ensure a fair evaluation of the database systems performance.
 
 
@@ -188,7 +277,7 @@ Another limitation pertains to the use of synthetic data. Synthetic datasets are
 While there is a rationale for the use of a single-node experimental environment, it introduces extra limitations. The setup allows for controlled comparison of the way the systems behave, but it does not capture the complexities of distributed deployments in which factors like replication, network latency and load balancing play a major role. This may mean that the results won’t fully generalize to large-scale distributed systems. 
 
 
-Another consideration for the research is measurement accuracy. Timing measurements obtained via application-level instrumentation could include overhead from network communication or client-side processing. Even though this reflects realistic scenarios for use, it may not isolate the internal performance of the database engine. \textcolor{red}{Including native query execution measurements helps to lower this risk by offering an alternative perspective on the system’s performance. }
+Another consideration for the research is measurement accuracy. Timing measurements obtained via application-level instrumentation could include overhead from network communication or client-side processing. Even though this reflects realistic scenarios for use, it may not isolate the internal performance of the database engine. 
 
 The selection of database systems may also limit external validity. This study focuses on a subset of the available technologies and the results may not map onto systems that are not included in the evaluation. However, deliberate effort has been made to select databases that represent diverse architectural approaches to allow for meaningful insights into different design paradigms. 
 

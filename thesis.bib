@@ -109,22 +109,50 @@
 % Background
 
 
-@article{Grzesik2020,
-   abstract = {Selection of an appropriate database system for edge IoT devices is one of the essential elements that determine efficient edge-based data analysis in low power wireless sensor networks. This paper presents a comparative analysis of time series databases in the context of edge computing for IoT and Smart Systems. The research focuses on the performance comparison between three time-series databases: TimescaleDB, InfluxDB, Riak TS, as well as two relational databases, PostgreSQL and SQLite. All selected solutions were tested while being deployed on a single-board computer, Raspberry Pi. For each of them, the database schema was designed, based on a data model representing sensor readings and their corresponding timestamps. For performance testing, we developed a small application that was able to simulate insertion and querying operations. The results of the experiments showed that for presented scenarios of reading data, PostgreSQL and InfluxDB emerged as the most performing solutions. For tested insertion scenarios, PostgreSQL turned out to be the fastest. Carried out experiments also proved that low-cost, single-board computers such as Raspberry Pi can be used as small-scale data aggregation nodes on edge device in low power wireless sensor networks, that often serve as a base for IoT-based smart systems.},
-   author = {Piotr Grzesik and Dariusz Mrozek},
-   doi = {10.1007/978-3-030-50426-7_28},
-   isbn = {9783030504250},
-   issn = {16113349},
-   journal = {Computational Science – ICCS 2020},
-   keywords = {Edge analytics,Edge computing,InfluxDB,PostgreSQL,Raspberry Pi,Riak TS,SQLite,Time series,TimescaleDB},
-   pages = {371},
-   publisher = {Springer Science and Business Media Deutschland GmbH},
-   title = {Comparative Analysis of Time Series Databases in the Context of Edge Computing for Low Power Sensor Networks},
-   volume = {12141},
-   url = {https://pmc.ncbi.nlm.nih.gov/articles/PMC7302557/},
-   year = {2020}
+@article{computers_2025,
+  author         = {Abdulhussain, Sadiq H. and Mahmmod, Basheera M. and Alwhelat, Almuntadher and Shehada, Dina and Shihab, Zainab I. and Mohammed, Hala J. and Abdulameer, Tuqa H. and Alsabah, Muntadher and Fadel, Maryam H. and Ali, Susan K. and Abbood, Ghadeer H. and Asker, Zianab A. and Hussain, Abir},
+  title          = {A Comprehensive Review of Sensor Technologies in IoT: Technical Aspects, Challenges, and Future Directions},
+  journal        = {Computers},
+  volume         = {14},
+  year           = {2025},
+  number         = {8},
+  article-number = {342},
+  url            = {https://www.mdpi.com/2073-431X/14/8/342},
+  issn           = {2073-431X},
+  abstract       = {The rapid advancements in wireless technology and digital electronics have led to the widespread adoption of compact, intelligent devices in various aspects of daily life. These advanced systems possess the capability to sense environmental changes, process data, and communicate seamlessly within interconnected networks. Typically, such devices integrate low-power radio transmitters and multiple smart sensors, hence enabling efficient functionality across wide ranges of applications. Alongside these technological developments, the concept of the IoT has emerged as a transformative paradigm, facilitating the interconnection of uniquely identifiable devices through internet-based networks. This paper aims to provide a comprehensive exploration of sensor technologies, detailing their integral role within IoT frameworks and examining their impact on optimizing efficiency and service delivery in modern wireless communications systems. Also, it presents a thorough review of sensor technologies, current research trends, and the associated challenges in this evolving field, providing a detailed explanation of recent advancements and IoT-integrated sensor systems, with a particular emphasis on the fundamental architecture of sensors and their pivotal role in modern technological applications. It explores the core benefits of sensor technologies and delivers an in-depth classification of their fundamental types. Beyond reviewing existing developments, this study identifies key open research challenges and outlines prospective directions for future exploration, offering valuable insights for both academic researchers and industry professionals. Ultimately, this paper serves as an essential reference for understanding sensor technologies and their potential contributions to IoT-driven solutions. This study offers meaningful contributions to academic and industrial sectors, facilitating advancements in sensor innovation.},
+  doi            = {10.3390/computers14080342}
 }
 
+
+
+
+
+
+@article{Grzesik2020,
+  abstract  = {Selection of an appropriate database system for edge IoT devices is one of the essential elements that determine efficient edge-based data analysis in low power wireless sensor networks. This paper presents a comparative analysis of time series databases in the context of edge computing for IoT and Smart Systems. The research focuses on the performance comparison between three time-series databases: TimescaleDB, InfluxDB, Riak TS, as well as two relational databases, PostgreSQL and SQLite. All selected solutions were tested while being deployed on a single-board computer, Raspberry Pi. For each of them, the database schema was designed, based on a data model representing sensor readings and their corresponding timestamps. For performance testing, we developed a small application that was able to simulate insertion and querying operations. The results of the experiments showed that for presented scenarios of reading data, PostgreSQL and InfluxDB emerged as the most performing solutions. For tested insertion scenarios, PostgreSQL turned out to be the fastest. Carried out experiments also proved that low-cost, single-board computers such as Raspberry Pi can be used as small-scale data aggregation nodes on edge device in low power wireless sensor networks, that often serve as a base for IoT-based smart systems.},
+  author    = {Piotr Grzesik and Dariusz Mrozek},
+  doi       = {10.1007/978-3-030-50426-7_28},
+  isbn      = {9783030504250},
+  issn      = {16113349},
+  journal   = {Computational Science – ICCS 2020},
+  keywords  = {Edge analytics,Edge computing,InfluxDB,PostgreSQL,Raspberry Pi,Riak TS,SQLite,Time series,TimescaleDB},
+  pages     = {371},
+  publisher = {Springer Science and Business Media Deutschland GmbH},
+  title     = {Comparative Analysis of Time Series Databases in the Context of Edge Computing for Low Power Sensor Networks},
+  volume    = {12141},
+  url       = {https://pmc.ncbi.nlm.nih.gov/articles/PMC7302557/},
+  year      = {2020}
+}
+
+@misc{Juan_2017,
+  title         = {Ingestion, Indexing and Retrieval of High-Velocity Multidimensional Sensor Data on a Single Node},
+  author        = {Juan A. Colmenares and Reza Dorrigiv and Daniel G. Waddington},
+  year          = {2017},
+  eprint        = {1707.00825},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.DB},
+  url           = {https://arxiv.org/abs/1707.00825}
+}
 
 @article{GUBBI20131645,
   title    = {Internet of Things (IoT): A vision, architectural elements, and future directions},
@@ -196,59 +224,26 @@
 
 
 @article{Bhandari2017,
-   abstract = {Wireless sensor networks have gained significant traction in environmental signal monitoring and analysis. The cost or lifetime of the system typically depends on the frequency at which environmental phenomena are monitored. If sampling rates are reduced, energy is saved. Using empirical datasets collected from environmental monitoring sensor networks, this work performs time series analyses of measured temperature time series. Unlike previous works which have concentrated on suppressing the transmission of some data samples by time-series analysis but still maintaining high sampling rates, this work investigates reducing the sampling rate (and sensor wake up rate) and looks at the effects on accuracy. Results show that the sampling period of the sensor can be increased up to one hour while still allowing intermediate and future states to be estimated with interpolation RMSE less than 0.2 °C and forecasting RMSE less than 1 °C.},
-   author = {Siddhartha Bhandari and Neil Bergmann and Raja Jurdak and Branislav Kusy},
-   doi = {10.3390/s17061221},
-   issn = {14248220},
-   issue = {6},
-   journal = {Sensors 2017, Vol. 17, Page 1221},
-   keywords = {environmental monitoring,forecasting,interpolation,temperature,time series analysis,wireless sensor networks},
-   month = {5},
-   pages = {1221},
-   pmid = {28587133},
-   publisher = {Multidisciplinary Digital Publishing Institute},
-   title = {Time Series Data Analysis of Wireless Sensor Network Measurements of Temperature},
-   volume = {17},
-   url = {https://www.mdpi.com/1424-8220/17/6/1221/htm https://www.mdpi.com/1424-8220/17/6/1221},
-   year = {2017}
+  abstract  = {Wireless sensor networks have gained significant traction in environmental signal monitoring and analysis. The cost or lifetime of the system typically depends on the frequency at which environmental phenomena are monitored. If sampling rates are reduced, energy is saved. Using empirical datasets collected from environmental monitoring sensor networks, this work performs time series analyses of measured temperature time series. Unlike previous works which have concentrated on suppressing the transmission of some data samples by time-series analysis but still maintaining high sampling rates, this work investigates reducing the sampling rate (and sensor wake up rate) and looks at the effects on accuracy. Results show that the sampling period of the sensor can be increased up to one hour while still allowing intermediate and future states to be estimated with interpolation RMSE less than 0.2 °C and forecasting RMSE less than 1 °C.},
+  author    = {Siddhartha Bhandari and Neil Bergmann and Raja Jurdak and Branislav Kusy},
+  doi       = {10.3390/s17061221},
+  issn      = {14248220},
+  issue     = {6},
+  journal   = {Sensors 2017, Vol. 17, Page 1221},
+  keywords  = {environmental monitoring,forecasting,interpolation,temperature,time series analysis,wireless sensor networks},
+  month     = {5},
+  pages     = {1221},
+  pmid      = {28587133},
+  publisher = {Multidisciplinary Digital Publishing Institute},
+  title     = {Time Series Data Analysis of Wireless Sensor Network Measurements of Temperature},
+  volume    = {17},
+  url       = {https://www.mdpi.com/1424-8220/17/6/1221/htm https://www.mdpi.com/1424-8220/17/6/1221},
+  year      = {2017}
 }
 
 
 
-@article{Struckov2019,
-   abstract = {Time series data as its analysis and applications recently have become increasingly important in different areas and domains. Many fields of science and industry rely on storing and processing large amounts of time series - economics and finance, medicine, the Internet of Things, environmental protection, hardware monitoring, and many others. This work presents a theoretical and experimental approach to choosing an appropriate instrument.},
-   author = {Alexey Struckov and Semen Yufa and Alexander A. Visheratin and Denis Nasonov},
-   doi = {10.1016/j.procs.2019.08.125},
-   issn = {18770509},
-   journal = {Procedia Computer Science},
-   keywords = {cloud services,database,distributed storage,time series},
-   month = {1},
-   pages = {19-28},
-   publisher = {Elsevier},
-   title = {Evaluation of modern tools and techniques for storing time-series data},
-   volume = {156},
-   url = {https://doi.org/10.4324/9781351310925-10},
-   year = {2019}
-}
 
-
-@article{Lamb_2012,
-  author     = {Lamb, Andrew and Fuller, Matt and Varadarajan, Ramakrishna and Tran, Nga and Vandiver, Ben and Doshi, Lyric and Bear, Chuck},
-  title      = {The vertica analytic database: C-store 7 years later},
-  year       = {2012},
-  issue_date = {August 2012},
-  publisher  = {VLDB Endowment},
-  volume     = {5},
-  number     = {12},
-  issn       = {2150-8097},
-  url        = {https://doi.org/10.14778/2367502.2367518},
-  doi        = {10.14778/2367502.2367518},
-  abstract   = {This paper describes the system architecture of the Vertica Analytic Database (Vertica), a commercialization of the design of the C-Store research prototype. Vertica demonstrates a modern commercial RDBMS system that presents a classical relational interface while at the same time achieving the high performance expected from modern "web scale" analytic systems by making appropriate architectural choices. Vertica is also an instructive lesson in how academic systems research can be directly commercialized into a successful product.},
-  journal    = {Proc. VLDB Endow.},
-  month      = aug,
-  pages      = {1790–1801},
-  numpages   = {12}
-}
 
 
 @article{Nasar_Kausar_2019,
@@ -286,19 +281,6 @@
   note         = {Accessed: 2026-03-06}
 }
 
-@article{Sokolinsky2004,
-  author   = {Sokolinsky, Leonid B.},
-  title    = {Survey of Architectures of Parallel Database Systems},
-  journal  = {Programming and Computer Software},
-  year     = {2004},
-  volume   = {30},
-  number   = {6},
-  pages    = {337--346},
-  doi      = {10.1023/B:PACS.0000049511.71586.e0},
-  url      = {https://doi.org/10.1023/B:PACS.0000049511.71586.e0},
-  issn     = {1608-3261},
-  abstract = {The paper is devoted to the classification, design, and analysis of architectures of parallel database systems. A formalization of the notion parallel database system is suggested, which relies on a concept of a virtual machine. Based on this formalization, a new approach to the classification of architectures of parallel database systems is suggested. Requirements to parallel database systems are formulated, which serve as criteria for comparing various architectures. Various classes of architectures of parallel database systems are considered and compared.}
-}
 
 
 @misc{tashma2020extensibledataskipping,
@@ -311,33 +293,7 @@
   url           = {https://arxiv.org/abs/2009.08150}
 }
 
-@article{Pelkonen_2015,
-  author     = {Pelkonen, Tuomas and Franklin, Scott and Teller, Justin and Cavallaro, Paul and Huang, Qi and Meza, Justin and Veeraraghavan, Kaushik},
-  title      = {Gorilla: a fast, scalable, in-memory time series database},
-  year       = {2015},
-  issue_date = {August 2015},
-  publisher  = {VLDB Endowment},
-  volume     = {8},
-  number     = {12},
-  issn       = {2150-8097},
-  url        = {https://doi.org/10.14778/2824032.2824078},
-  doi        = {10.14778/2824032.2824078},
-  abstract   = {Large-scale internet services aim to remain highly available and responsive in the presence of unexpected failures. Providing this service often requires monitoring and analyzing tens of millions of measurements per second across a large number of systems, and one particularly effective solution is to store and query such measurements in a time series database (TSDB).A key challenge in the design of TSDBs is how to strike the right balance between efficiency, scalability, and reliability. In this paper we introduce Gorilla, Facebook's in-memory TSDB. Our insight is that users of monitoring systems do not place much emphasis on individual data points but rather on aggregate analysis, and recent data points are of much higher value than older points to quickly detect and diagnose the root cause of an ongoing problem. Gorilla optimizes for remaining highly available for writes and reads, even in the face of failures, at the expense of possibly dropping small amounts of data on the write path. To improve query efficiency, we aggressively leverage compression techniques such as delta-of-delta timestamps and XOR'd floating point values to reduce Gorilla's storage footprint by 10x. This allows us to store Gorilla's data in memory, reducing query latency by 73x and improving query throughput by 14x when compared to a traditional database (HBase)-backed time series data. This performance improvement has unlocked new monitoring and debugging tools, such as time series correlation search and more dense visualization tools. Gorilla also gracefully handles failures from a single-node to entire regions with little to no operational overhead.},
-  journal    = {Proc. VLDB Endow.},
-  month      = aug,
-  pages      = {1816–1827},
-  numpages   = {12}
-}
 
-
-@book{Gray1992Benchmark,
-  editor    = {Gray, Jim},
-  title     = {The Benchmark Handbook: For Database and Transaction Processing Systems},
-  year      = {1992},
-  publisher = {Morgan Kaufmann},
-  address   = {San Mateo, CA},
-  url       = {http://bvbr.bib-bvb.de:8991/F?func=service&doc_library=BVB01&local_base=BVB01&doc_number=005950188&sequence=000001&line_number=0001&func_code=DB_RECORDS&service_type=MEDIA}
-}
 
 @software{timescaledb2017,
   author = {{Timescale, Inc.}},
@@ -356,24 +312,6 @@
   note         = {Accessed: 16 March 2026}
 }
 
-
-@article{Schulze_2024,
-  author     = {Schulze, Robert and Schreiber, Tom and Yatsishin, Ilya and Dahimene, Ryadh and Milovidov, Alexey},
-  title      = {ClickHouse - Lightning Fast Analytics for Everyone},
-  year       = {2024},
-  issue_date = {August 2024},
-  publisher  = {VLDB Endowment},
-  volume     = {17},
-  number     = {12},
-  issn       = {2150-8097},
-  url        = {https://doi.org/10.14778/3685800.3685802},
-  doi        = {10.14778/3685800.3685802},
-  abstract   = {Over the past several decades, the amount of data being stored and analyzed has increased exponentially. Businesses across industries and sectors have begun relying on this data to improve products, evaluate performance, and make business-critical decisions. However, as data volumes have increasingly become internet-scale, businesses have needed to manage historical and new data in a cost-effective and scalable manner, while analyzing it using a high number of concurrent queries and an expectation of real-time latencies (e.g. less than one second, depending on the use case).This paper presents an overview of ClickHouse, a popular open-source OLAP database designed for high-performance analytics over petabyte-scale data sets with high ingestion rates. Its storage layer combines a data format based on traditional log-structured merge (LSM) trees with novel techniques for continuous transformation (e.g. aggregation, archiving) of historical data in the background. Queries are written in a convenient SQL dialect and processed by a state-of-the-art vectorized query execution engine with optional code compilation. ClickHouse makes aggressive use of pruning techniques to avoid evaluating irrelevant data in queries. Other data management systems can be integrated at the table function, table engine, or database engine level. Real-world benchmarks demonstrate that ClickHouse is amongst the fastest analytical databases on the market.},
-  journal    = {Proc. VLDB Endow.},
-  month      = aug,
-  pages      = {3731–3744},
-  numpages   = {14}
-}
 
 
 @misc{mongodb_documents,
@@ -416,3 +354,253 @@
   note         = {Accessed: 16 March 2026}
 }
 
+@article{MAHMOOD2015166,
+  title    = {Reliability in wireless sensor networks: A survey and challenges ahead},
+  journal  = {Computer Networks},
+  volume   = {79},
+  pages    = {166-187},
+  year     = {2015},
+  issn     = {1389-1286},
+  doi      = {https://doi.org/10.1016/j.comnet.2014.12.016},
+  url      = {https://www.sciencedirect.com/science/article/pii/S1389128614004708},
+  author   = {Muhammad Adeel Mahmood and Winston K.G. Seah and Ian Welch},
+  keywords = {Wireless sensor networks, Reliability, Redundancy, Retransmission},
+  abstract = {Ensuring energy efficient and reliable transport of data in resource constrained Wireless Sensor Networks (WSNs) is one of the primary concerns to achieve a high degree of efficiency in monitoring and control systems. The two techniques typically used in WSNs to achieve reliability are either retransmission or redundancy. Most of the existing research focuses on traditional retransmission-based reliability, where reliable transmission of data packets is ensured in terms of recovering the lost packets by retransmitting them. This might result in additional transmission overhead that not only wastes sensors’ limited energy resources but also makes the network congested and in turn affects the reliable transmission of data. On the other hand, employing redundancy to achieve reliability in WSNs has received comparatively lesser emphasis by the research community [35] and this area warrants further investigation. In redundancy-based reliability mechanisms, a bit loss within a packet can be recovered by utilizing some form of coding schemes. This ability to correct the lost or corrupted bits within a packet would significantly reduce the transmission overhead caused by the retransmission of the entire packet. Both retransmission and redundancy can either be performed on a hop-by-hop or an end-to-end basis. Hop-by-hop method allows the intermediate nodes to perform retransmission or redundancy. On the other hand, in the end-to-end approach, retransmission or redundancy is performed only at the source and the destination nodes. However, a hybrid mechanism with an efficient combination of these retransmission and redundancy techniques in order to achieve reliability has so far been neglected by the existing research. Depending on the nature of the application, it is also important to define the amount of data required to ensure reliability. This introduces the concept of packet or event level reliability. Packet reliability requires all the packets from all the relevant sensor nodes to reach the sink, whereas event reliability ensures that the sink only gets enough information about a certain event happening. Thus retransmission or redundancy techniques using hop-by-hop or end-to-end mechanisms aim to achieve either packet or event level reliability. This paper presents a survey on reliability protocols in WSNs. We review several reliability schemes based on retransmission and redundancy techniques using different combinations of packet or event reliability in terms of recovering the lost data using hop-by-hop or end-to-end mechanisms. We further analyze these schemes by investigating the most suitable combination of these techniques, methods and required reliability level in order to provide energy efficient reliability mechanism for resource constrained WSNs. This paper also proposes a 3D reference model for classifying research in WSN reliability, which will be used to perform in-depth analysis of the unexplored areas.}
+}
+
+
+@article{pelkonen2015,
+  author  = {Pelkonen, Tuomas and Franklin, Scott and Cavallaro, Paul and Huang, Qi and Meza, Justin and Teller, Justin and Veeraraghavan, Kaushik},
+  title   = {Gorilla: A Fast, Scalable, In-Memory Time Series Database},
+  journal = {Proceedings of the VLDB Endowment},
+  volume  = {8},
+  number  = {12},
+  pages   = {1816--1827},
+  year    = {2015},
+  doi     = {10.14778/2824032.2824078},
+  url     = {https://www.vldb.org/pvldb/vol8/p1816-teller.pdf}
+}
+
+
+
+@inproceedings{ordonez2018survey,
+  author    = {Ordonez, Carlos and Bellatreche, Ladjel},
+  editor    = {Elloumi, Mourad and others},
+  title     = {A Survey on Parallel Database Systems from a Storage Perspective: Rows Versus Columns},
+  booktitle = {Database and Expert Systems Applications},
+  series    = {Communications in Computer and Information Science},
+  volume    = {903},
+  pages     = {5--20},
+  year      = {2018},
+  publisher = {Springer},
+  address   = {Cham},
+  doi       = {10.1007/978-3-319-99133-7_1},
+  url       = {https://www2.cs.uh.edu/~ordonez/pdfwww/w-2018-DEXA-paralleldbms.pdf}
+}
+
+@misc{postgresql_partitioning,
+  author       = {{PostgreSQL Global Development Group}},
+  title        = {Table Partitioning},
+  howpublished = {PostgreSQL Documentation},
+  year         = {2025},
+  url          = {https://www.postgresql.org/docs/current/ddl-partitioning.html},
+  note         = {Accessed 2026-08-20}
+}
+
+
+@inproceedings{abadi2008columnstores,
+  author    = {Abadi, Daniel J. and Madden, Samuel R. and Hachem, Nabil},
+  title     = {Column-Stores vs. Row-Stores: How Different Are They Really?},
+  booktitle = {Proceedings of the 2008 ACM SIGMOD International Conference on Management of Data},
+  series    = {SIGMOD '08},
+  pages     = {967--980},
+  year      = {2008},
+  address   = {Vancouver, Canada},
+  publisher = {ACM},
+  doi       = {10.1145/1376616.1376712},
+  url       = {https://www.cs.umd.edu/~abadi/papers/abadi-sigmod08.pdf}
+}
+
+
+@misc{clickhouse_architecture,
+  author       = {{ClickHouse}},
+  title        = {Overview of ClickHouse Architecture},
+  howpublished = {ClickHouse Documentation},
+  year         = {2026},
+  url          = {https://clickhouse.com/docs/development/architecture},
+  note         = {Accessed 2026-08-20}
+}
+
+
+@misc{timescale_narrow_wide,
+  author       = {{Tiger Data (Timescale)}},
+  title        = {Designing Your Database Schema: Narrow, Medium or Wide Table Layout},
+  howpublished = {Tiger Data Learn},
+  year         = {2026},
+  url          = {https://www.tigerdata.com/learn/designing-your-database-schema-wide-vs-narrow-postgres-tables},
+  note         = {Accessed 2026-08-20}
+}
+
+
+
+@article{ghanem2007incremental,
+  author  = {Ghanem, Thanaa M. and Hammad, Moustafa A. and Mokbel, Mohamed F. and Aref, Walid G. and Elmagarmid, Ahmed K.},
+  title   = {Incremental Evaluation of Sliding-Window Queries over Data Streams},
+  journal = {IEEE Transactions on Knowledge and Data Engineering},
+  volume  = {19},
+  number  = {1},
+  pages   = {57--72},
+  year    = {2007},
+  doi     = {10.1109/TKDE.2007.250583},
+  url     = {https://www.cs.purdue.edu/homes/ake/pub/TKDE-0148-0405-1.pdf}
+}
+
+
+
+
+@article{babu2001continuous,
+  author  = {Babu, Shivnath and Widom, Jennifer},
+  title   = {Continuous Queries over Data Streams},
+  journal = {ACM SIGMOD Record},
+  volume  = {30},
+  number  = {3},
+  pages   = {109--120},
+  year    = {2001},
+  doi     = {10.1145/603867.603884},
+  url     = {http://web.cs.wpi.edu/~mukherab/i/CQ.pdf}
+}
+
+@misc{timescale_continuous_aggregates,
+  author       = {{Tiger Data (Timescale)}},
+  title        = {Understand Continuous Aggregates},
+  howpublished = {TimescaleDB Documentation},
+  year         = {2026},
+  url          = {https://www.tigerdata.com/docs/learn/continuous-aggregates},
+  note         = {Accessed 2026-08-20}
+}
+
+
+@inproceedings{agarwal2013blinkdb,
+  author    = {Agarwal, Sameer and Mozafari, Barzan and Panda, Aurojit and Milner, Henry and Madden, Samuel and Stoica, Ion},
+  title     = {BlinkDB: Queries with Bounded Errors and Bounded Response Times on Very Large Data},
+  booktitle = {Proceedings of the 8th ACM European Conference on Computer Systems},
+  series    = {EuroSys '13},
+  pages     = {29--42},
+  year      = {2013},
+  publisher = {ACM},
+  doi       = {10.1145/2465351.2465355},
+  url       = {https://arxiv.org/pdf/1203.5485}
+}
+
+
+% design
+@misc{questdb2026best,
+  author       = {{QuestDB}},
+  title        = {The Best Time Series Databases Compared},
+  howpublished = {QuestDB Blog},
+  year         = {2026},
+  url          = {https://questdb.com/blog/best-time-series-databases/},
+  note         = {Accessed 2026-08-20}
+}
+
+@misc{tigerdata2026best,
+  author       = {{Tiger Data (Timescale)}},
+  title        = {The Best Time Series Databases Compared},
+  howpublished = {Tiger Data Learn},
+  year         = {2026},
+  url          = {https://www.tigerdata.com/learn/the-best-time-series-databases-compared},
+  note         = {Accessed 2026-08-20}
+}
+
+@misc{mongodb2026timeseries,
+  author       = {{MongoDB}},
+  title        = {Time Series --- Database Manual},
+  howpublished = {MongoDB Documentation},
+  year         = {2026},
+  url          = {https://www.mongodb.com/docs/manual/core/timeseries-collections/},
+  note         = {Accessed 2026-08-20}
+}
+
+
+@misc{influxdata_influxdb,
+  author       = {{InfluxData}},
+  title        = {influxdb: Scalable Datastore for Metrics, Events, and Real-Time Analytics},
+  howpublished = {GitHub},
+  year         = {2026},
+  url          = {https://github.com/influxdata/influxdb},
+  note         = {Accessed 2026-08-20}
+}
+
+@misc{mongodb_github,
+  author       = {{MongoDB}},
+  title        = {mongo: The MongoDB Database},
+  howpublished = {GitHub},
+  year         = {2026},
+  url          = {https://github.com/mongodb/mongo},
+  note         = {Accessed 2026-08-20}
+}
+
+@misc{timescale_timescaledb_github,
+  author       = {{Timescale}},
+  title        = {timescaledb: A Time-Series Database for High-Performance Real-Time Analytics Packaged as a Postgres Extension},
+  howpublished = {GitHub},
+  year         = {2026},
+  url          = {https://github.com/timescale/timescaledb},
+  note         = {Accessed 2026-08-20}
+}
+
+@misc{timescale_tsbs_github,
+  author       = {{Timescale}},
+  title        = {tsbs: Time Series Benchmark Suite, a Tool for Comparing and Evaluating Databases for Time Series Data},
+  howpublished = {GitHub},
+  year         = {2026},
+  url          = {https://github.com/timescale/tsbs},
+  note         = {Accessed 2026-08-20}
+}
+
+
+@article{khelifati2023tsmbench,
+  author  = {Khelifati, Abdelouahab and Khayati, Mourad and Cudr{\'e}-Mauroux, Philippe and Hached, Djellel and Bourhis, Pierre},
+  title   = {TSM-Bench: Benchmarking Time Series Database Systems for Monitoring Applications},
+  journal = {Proceedings of the VLDB Endowment},
+  volume  = {16},
+  number  = {11},
+  pages   = {3363--3376},
+  year    = {2023},
+  doi     = {10.14778/3611479.3611533},
+  url     = {https://www.vldb.org/pvldb/vol16/p3363-khelifati.pdf}
+}
+
+
+
+% implementation
+
+@misc{jsongenerator,
+  author       = {Omanashvili, Vazha},
+  title        = {JSON Generator --- Tool for Generating Random Data},
+  howpublished = {json-generator.com},
+  year         = {2026},
+  url          = {https://json-generator.com/},
+  note         = {Accessed 2026-08-20}
+}
+
+
+
+# extra
+@misc{yosafe_timeseries_thesis,
+  author       = {Oqbamecail, Yosafe Fesaha},
+  title        = {timeseries-thesis},
+  howpublished = {GitHub},
+  year         = {2026},
+  url          = {https://github.com/Yo581515/timeseries-thesis},
+  note         = {Accessed 2026-08-20}
+}
+
+@misc{yosafe_timeseries_data,
+  author       = {Oqbamecail, Yosafe Fesaha},
+  title        = {timeseries-thesis: Research Data},
+  howpublished = {GitHub},
+  year         = {2026},
+  url          = {https://github.com/Yo581515/timeseries-thesis/tree/main/data},
+  note         = {Accessed 2026-08-20}
+}
