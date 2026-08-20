@@ -34,65 +34,43 @@ The final phase of the \citet{Brown_1996} framework, experiment evaluation, invo
 
 \section{Selection of Database Systems}
 
-\begin{landscape}
+
+\begin{table}[htbp]
+\centering
 \small
-\begin{longtable}{|p{2.6cm}|p{6.5cm}|p{3cm}|p{4.5cm}|}
+\setlength{\tabcolsep}{4pt} % Tighten column padding slightly
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{2.2cm}|X|>{\raggedright\arraybackslash}p{2.6cm}|X|}
 \hline
 \textbf{Database} & \textbf{Highlights} & \textbf{License} & \textbf{Best For} \\
 \hline
-\endfirsthead
-
-\hline
-\textbf{Database} & \textbf{Highlights} & \textbf{License} & \textbf{Best For} \\
-\hline
-\endhead
-
-\hline
-\endfoot
-
-\hline
-\endlastfoot
-
 InfluxDB & SQL and InfluxQL; no temporal joins; no matviews, last-write; object store native (Core); Explorer app & MIT/Apache, commercial tiers & Recent-data metrics \& IoT \\
 \hline
-
 TimescaleDB & PostgreSQL SQL (no TS); no temporal joins; matviews with dedup on write; tiering via Tiger Cloud only; cloud console & Apache 2.0 plus TSL & Time-series in PostgreSQL \\
 \hline
-
 MongoDB & Document-oriented (BSON); native time series collections since v5.0; automatic bucketing and columnar compression; writable non-materialized views backed by an internal collection & Server Side Public License (SSPL) & Flexible-schema applications with time-series data (IoT, logs, event data) \\
 \hline
-
 QuestDB & SQL and time semantics; full temporal joins; matviews with dedup on write; tiered Parquet (Enterprise); console and dashboards & Apache 2.0 plus Enterprise & Capital markets, energy, aerospace \& robotics \\
 \hline
-
 TDengine & SQL; ASOF plus window joins; matviews (TSMA) with dedup; tiering via Enterprise; taosExplorer & AGPL-3.0 plus Enterprise & Industrial IoT \& edge \\
 \hline
-
 ClickHouse & SQL dialect; ASOF join only; matviews with eventual dedup; S3 tiering (OSS); /play console & Apache 2.0 plus Cloud & Large-scale analytical scans \\
 \hline
-
 kdb+ & q and SQL (KDB-X) and Python; ASOF plus window joins; no matviews, DIY dedup; proprietary storage; KX Dashboards, pgwire & Proprietary, free tiers & HFT \& capital markets \\
 \hline
-
 DolphinDB & SQL plus scripting language; ASOF plus window (functions); no matviews, ingest dedup; proprietary storage; GUI and web dashboards & Proprietary, free Community & Capital markets, industrial IoT \\
 \hline
-
 Prometheus & Kubernetes-native monitoring; PromQL query language; single-node (Thanos/Mimir for horizontal scaling) & Apache 2.0 & Kubernetes-native monitoring \\
 \hline
-
 VictoriaMetrics & Prometheus long-term storage; MetricsQL (PromQL-compatible); horizontal scaling with free clustering & Apache 2.0 & Prometheus long-term storage \\
 \hline
-
 Apache Druid & SQL (via Calcite); horizontal scaling; real-time stream analytics & Apache 2.0 & Real-time stream analytics \\
 \hline
-
 Graphite & Custom query language; limited scalability & Apache 2.0 & Legacy monitoring \\
 \hline
-
+\end{tabularx}
 \caption{Comparison of time series databases: highlights, licensing, and best-fit use cases. Compiled from \citet{questdb2026best}, \citet{tigerdata2026best}, and \citet{mongodb2026timeseries}.}
 \label{tab:tsdb-comparison}
-\end{longtable}
-\end{landscape}
+\end{table}
 
 For this study, the selection of database technologies is guided by the need to evaluate systems which represent distinct architectural approaches to time series data management while still staying practically deployable within the experimental environment scope. Instead of attempting to evaluate all possible time series databases, this study stays focused by selecting a few representative systems that allow for meaningful comparisons across different philosophies of design. Three systems are picked for the initial phase of the evaluation – MongoDB, TimescaleDB and InfluxDB. These systems were picked because together, they represent different paradigms for managing time series data – native time series database architectures, document-oriented storage and relational time-series extensions. This diversity ensures the study can examine how fundamentally different design decisions can influence system behavior under identical workload conditions. 
 
